@@ -1,5 +1,4 @@
-#!/usr/bin/env sh
-
+echo 'Installing NB dotfiles...'
 if [ -d ~/.nbdotfiles ]
 then
   echo "You've already installed the dotfiles."
@@ -30,4 +29,4 @@ cp ~/.nbdotfiles/.irbrc ~/
 source ~/.bashrc
 source ~/.bash_profile
 
-echo "NBDotfiles Successfully Removed!"
+echo "NB dotfiles Successfully Installed!"
