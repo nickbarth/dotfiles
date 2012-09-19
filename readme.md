@@ -12,7 +12,7 @@ curl -L https://raw.github.com/nickbarth/dotfiles/master/install.sh | sh
 
 ### Unstallation
 
-Uninstall and restore your orignal dotfiles included.
+Uninstall and restore your orignal dotfiles.
 
 ```terminal
 curl -L https://raw.github.com/nickbarth/dotfiles/master/unistall.sh | sh
