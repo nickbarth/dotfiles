@@ -1,4 +1,7 @@
+#!/usr/bin/env sh
+
 echo 'Installing NB dotfiles...'
+
 if [ -d ~/.nbdotfiles ]
 then
   echo "You've already installed the dotfiles."
