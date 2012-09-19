@@ -10,11 +10,11 @@ fi
 
 echo "Restoring backed up dotfiles..."
 mkdir ~/.nbdotfiles/backups
-~/.nbdotfiles/backups/.bashrc ~/
-~/.nbdotfiles/backups/.bash_profile ~/
-~/.nbdotfiles/backups/.gemrc ~/
-~/.nbdotfiles/backups/.vimrc ~/
-~/.nbdotfiles/backups/.irbrc ~/
+mv ~/.nbdotfiles/backups/.bashrc ~/.bashrc
+mv ~/.nbdotfiles/backups/.bash_profile ~/.bash_profile
+mv ~/.nbdotfiles/backups/.gemrc ~/.gemrc
+mv ~/.nbdotfiles/backups/.vimrc ~/.vimrc
+mv ~/.nbdotfiles/backups/.irbrc ~/.irbrc
 
 echo "Removing installation folder..."
 rm -rf ~/.nbdotfiles/
