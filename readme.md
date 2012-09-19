@@ -5,7 +5,7 @@ An archive of a few of my personal dotfiles for easy access.
 ### Installation
 
 ```terminal
-curl -L https://github.com/nickbarth/dotfiles/blob/master/install.sh | sh
+curl -L https://raw.github.com/nickbarth/dotfiles/master/install.sh | sh
 ```
 
 ### Unstallation
