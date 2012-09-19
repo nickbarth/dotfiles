@@ -31,5 +31,4 @@ cp ~/.nbdotfiles/irbrc ~/.irbrc
 
 source ~/.bashrc
 source ~/.bash_profile
-
 echo "NB dotfiles Successfully Installed!"
