@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+echo 'Uninstalling NB dotfiles...'
+
 if [ ! -d ~/.nbdotfiles ]
 then
   echo "You don't have these dotfiles installed."
@@ -17,4 +19,4 @@ mkdir ~/.nbdotfiles/backups
 echo "Removing installation folder..."
 rm -rf ~/.nbdotfiles/
 
-echo "NBDotfiles Successfully Removed!"
+echo "NB dotfiles Successfully Removed!"
