@@ -19,4 +19,6 @@ mkdir ~/.nbdotfiles/backups
 echo "Removing installation folder..."
 rm -rf ~/.nbdotfiles/
 
+source ~/.bashrc
+source ~/.bash_profile
 echo "NB dotfiles Successfully Removed!"
