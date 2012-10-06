@@ -18,3 +18,5 @@ set nohlsearch
 set directory=~/.vim/tmp/
 set paste
 set shortmess+=I
+set list
+set listchars=tab:..,trail:.
