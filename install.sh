@@ -23,6 +23,7 @@ mv ~/.vimrc ~/.nbdotfiles/backups/
 mv ~/.irbrc ~/.nbdotfiles/backups/
 
 echo "Copying over Cool New Dotfiles"
+mkdir -p ~/.vim/tmp/
 cp ~/.nbdotfiles/bashrc ~/.bashrc
 cp ~/.nbdotfiles/bash_profile ~/.bash_profile
 cp ~/.nbdotfiles/gemrc ~/.gemrc
