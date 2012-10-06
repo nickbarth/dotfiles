@@ -10,12 +10,12 @@ Install new dotfiles and backup your orignal ones.
 curl -L https://raw.github.com/nickbarth/dotfiles/master/install.sh | sh
 ```
 
-### Unstallation
+### Unistallation
 
 Uninstall and restore your orignal dotfiles.
 
 ```terminal
-curl -L https://raw.github.com/nickbarth/dotfiles/master/unistall.sh | sh
+curl -L https://raw.github.com/nickbarth/dotfiles/master/uninstall.sh | sh
 ```
 
 ### License
