@@ -1,4 +1,4 @@
-# Nick Barth Dot Files
+# dotfiles
 
 An archive of a few of my personal dotfiles for easy access.
 
