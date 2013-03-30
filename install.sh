@@ -1,35 +1,33 @@
 #!/usr/bin/env sh
 
-echo 'Installing NB dotfiles...'
+echo 'Installing dotfiles...'
 
-if [ -d ~/.nbdotfiles ]
+if [ -d ~/.dotfiles ]
 then
   echo "You've already installed the dotfiles."
   exit
 fi
 
-echo "Cloning dotfiles..."
+echo "Downloading dotfiles..."
 hash git >/dev/null && /usr/bin/env git clone https://github.com/nickbarth/dotfiles.git ~/.nbdotfiles || {
   echo "git not installed"
   exit
 }
 
 echo "Backing up original dotfiles..."
-mkdir ~/.nbdotfiles/backups
-mv ~/.bashrc ~/.nbdotfiles/backups/
-mv ~/.bash_profile ~/.nbdotfiles/backups/
-mv ~/.gemrc ~/.nbdotfiles/backups/
-mv ~/.vimrc ~/.nbdotfiles/backups/
-mv ~/.irbrc ~/.nbdotfiles/backups/
+mkdir ~/.dotfiles/backups
+mv ~/.bashrc ~/.dotfiles/backups/
+mv ~/.bash_profile ~/.dotfiles/backups/
+mv ~/.gemrc ~/.dotfiles/backups/
+mv ~/.vimrc ~/.dotfiles/backups/
+mv ~/.irbrc ~/.dotfiles/backups/
 
-echo "Copying over Cool New Dotfiles"
+echo "Copying over dotfiles"
 mkdir -p ~/.vim/tmp/
-cp ~/.nbdotfiles/bashrc ~/.bashrc
-cp ~/.nbdotfiles/bash_profile ~/.bash_profile
-cp ~/.nbdotfiles/gemrc ~/.gemrc
-cp ~/.nbdotfiles/vimrc ~/.vimrc
-cp ~/.nbdotfiles/irbrc ~/.irbrc
+cp ~/.dotfiles/.bashrc ~/.bashrc
+cp ~/.dotfiles/.bash_profile ~/.bash_profile
+cp ~/.dotfiles/.gemrc ~/.gemrc
+cp ~/.dotfiles/.vimrc ~/.vimrc
+cp ~/.dotfiles/.irbrc ~/.irbrc
 
-source ~/.bashrc
-source ~/.bash_profile
-echo "NB dotfiles Successfully Installed!"
+echo "Successfully installed dotfiles."
