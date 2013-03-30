@@ -1,7 +1,5 @@
 # .bash_profile
 
-source ~/.bashrc
-
 # Git Commands
 alias ga='git add'
 alias gb='git branch'

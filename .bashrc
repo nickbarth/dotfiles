@@ -1,7 +1,5 @@
 # .bashrc
 
-source /etc/bashrc
-
 # Vi Mode Rocks
 set editing-mode vi
 set keymap vi
