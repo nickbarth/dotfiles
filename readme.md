@@ -1,6 +1,6 @@
 # dotfiles
 
-An archive of a few of my personal dotfiles for easy access.
+An archive of personal dotfiles for easy access.
 
 ### Installation
 
