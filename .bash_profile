@@ -1,5 +1,8 @@
 # .bash_profile
 
+# Default Editor
+export EDITOR="vim"
+
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
