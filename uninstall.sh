@@ -10,16 +10,13 @@ fi
 
 echo "Restoring original dotfiles..."
 mkdir ~/.dotfiles/backups
-mv ~/.dotfiles/backups/.bashrc ~/.bashrc
-mv ~/.dotfiles/backups/.bash_profile ~/.bash_profile
-mv ~/.dotfiles/backups/.gemrc ~/.gemrc
-mv ~/.dotfiles/backups/.vimrc ~/.vimrc
-mv ~/.dotfiles/backups/.irbrc ~/.irbrc
+mv ~/.dotfiles/backups/.bashrc ~/.bashrc 2> /dev/null
+mv ~/.dotfiles/backups/.bash_profile ~/.bash_profile 2> /dev/null
+mv ~/.dotfiles/backups/.gemrc ~/.gemrc 2> /dev/null
+mv ~/.dotfiles/backups/.vimrc ~/.vimrc 2> /dev/null
+mv ~/.dotfiles/backups/.irbrc ~/.irbrc 2> /dev/null
 
 echo "Removing installation folder..."
 rm -rf ~/.dotfiles/
-
-source ~/.bashrc
-source ~/.bash_profile
 
 echo "Successfully removed dotfiles."
