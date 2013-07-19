@@ -15,7 +15,7 @@ set showmatch
 set novisualbell
 set noerrorbells
 set nohlsearch
-set directory=~/.vim/tmp/
+set directory=/tmp/
 set paste
 set shortmess+=I
 set list
