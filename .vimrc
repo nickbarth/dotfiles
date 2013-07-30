@@ -1,22 +1,33 @@
 " .vimrc
 
-set nowrap
-set nu
-set ruler
-set ts=2
-set bs=2
-set shiftwidth=2
-set wildmode=longest,list
+syntax on
+colo peachpuff
+
 set autoindent
-set smarttab
-set expandtab
+set bs=2
 set cindent
-set showmatch
-set novisualbell
-set noerrorbells
-set nohlsearch
 set directory=/tmp/
-set paste
-set shortmess+=I
+set expandtab
+set incsearch
 set list
 set listchars=tab:..,trail:.
+set noerrorbells
+set nohlsearch
+set novisualbell
+set nowrap
+set nu
+set paste
+set path=**
+set ruler
+set shiftwidth=2
+set shortmess+=I
+set showmatch
+set smarttab
+set tabstop=2
+set ts=2
+set wildmode=longest,list
+
+au FileType js set omnifunc=javascriptcomplete#CompleteJS
+au FileType php set omnifunc=phpcomplete#CompletePHP
+au FileType rb set omnifunc=rubycomplete#CompleteRuby
+au FileType py set omnifunc=pythoncomplete#CompletePython
