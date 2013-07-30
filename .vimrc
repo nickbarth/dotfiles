@@ -3,6 +3,15 @@
 syntax on
 colo peachpuff
 
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby set omnifunc=rubycomplete#CompleteRuby
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
 set autoindent
 set bs=2
 set cindent
@@ -26,8 +35,3 @@ set smarttab
 set tabstop=2
 set ts=2
 set wildmode=longest,list
-
-au FileType js set omnifunc=javascriptcomplete#CompleteJS
-au FileType php set omnifunc=phpcomplete#CompletePHP
-au FileType rb set omnifunc=rubycomplete#CompleteRuby
-au FileType py set omnifunc=pythoncomplete#CompletePython
