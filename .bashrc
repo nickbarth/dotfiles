@@ -6,7 +6,7 @@ set keymap vi
 set -o vi
 
 # Simpler Command Prompt
-PS1="[\w]$ "
+PS1="[\h:\w]$ "
 
 # Default Editor
 export EDITOR="vim"
