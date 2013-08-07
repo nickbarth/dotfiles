@@ -1,4 +1,6 @@
 startup_message off
 hardstatus alwayslastline
 shelltitle ''
-hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW"
+term "term xterm-256color"
+vbell off
+hardstatus string "%{=}%-w%{=r}%n %t%{-}%+w %=%c"
