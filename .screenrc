@@ -1,0 +1,4 @@
+startup_message off
+hardstatus alwayslastline
+shelltitle ''
+hardstatus string "%{= g} %{= w}%-Lw%{=r}%n%f* %t%{-}%+LW"
