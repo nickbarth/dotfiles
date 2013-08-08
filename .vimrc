@@ -35,3 +35,4 @@ set smarttab
 set tabstop=2
 set ts=2
 set wildmode=longest,list
+set autoindent
