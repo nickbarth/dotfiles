@@ -35,6 +35,10 @@ set smarttab
 set tabstop=2
 set ts=2
 set wildmode=longest,list
-set autoindent
 set foldmethod=indent
 set foldlevelstart=99
+set complete=.,b,u,]
+set spell spelllang=en_us
+set nospell
+set ignorecase
+set smartcase
