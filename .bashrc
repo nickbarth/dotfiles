@@ -39,7 +39,7 @@ gt: git tag
 export PATH=/usr/local/bin/:$PATH
 
 # Single TMUX
-if [[ -z "$TMUX" ]]; then
+if [ $STY ] && [[ -z "$TMUX" ]]; then
   tmux a -d || tmux new
   exit
 fi
