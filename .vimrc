@@ -1,16 +1,16 @@
-" .vimrc
+" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'tpope/vim-surround'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+filetype plugin indent on
 
+" .vimrc
 syntax on
 colo peachpuff
-
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby set omnifunc=rubycomplete#CompleteRuby
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 set autoindent
 set bs=2
