@@ -35,6 +35,9 @@ gs: git status
 gt: git tag
 "'
 
+# TMUX Keys
+alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
+
 # Binaries
 export PATH=/usr/local/bin/:$PATH
 
