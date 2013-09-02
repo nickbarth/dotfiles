@@ -1,13 +1,3 @@
-" vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'tpope/vim-surround'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
-filetype plugin indent on
-
 " .vimrc
 syntax on
 colo peachpuff
@@ -18,13 +8,14 @@ set cindent
 set directory=/tmp/
 set expandtab
 set incsearch
+set lisp
 set list
 set listchars=tab:..,trail:.
+set nocompatible
 set noerrorbells
 set nohlsearch
 set novisualbell
 set nowrap
-set nu
 set paste
 set path=**
 set ruler
@@ -41,4 +32,5 @@ set complete=.,b,u,]
 set spell spelllang=en_us
 set nospell
 set ignorecase
+set rnu
 set smartcase
