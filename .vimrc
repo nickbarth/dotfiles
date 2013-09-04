@@ -19,7 +19,7 @@ set nohlsearch                 " No search highlighting
 set novisualbell               " No screen flashing
 set nowrap                     " No text wrapping
 set paste                      " Always be in paste mode in insert
-set path=**                    " Recursive path for easier ":find example.ext"
+set path=**                    " Recursive path for easier ':find example.ext'
 set rnu                        " Relative line numbering for easier movement
 set ruler                      " Show the current row and column at the bottom right of the screen
 set shiftwidth=2               " Two spaces inserted for indentation
