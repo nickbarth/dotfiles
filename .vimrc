@@ -6,6 +6,7 @@ set autoindent                 " Copy indent from current line when starting a n
 set backspace=2                " Two character automatic placement after <
 set cindent                    " C style indenting rules
 set complete=.,b,u,]           " Auto complete from current buff, loaded buffs, unloaded buffs, and tags
+set directory=/tmp/            " Hide backups away in the tmp directory
 set expandtab                  " Expand tabs to spaces
 set foldlevelstart=99          " Unfold all code folding
 set foldmethod=indent          " Cold folding mode set to indents
@@ -14,7 +15,6 @@ set incsearch                  " Search a word as its typed
 set lisp                       " Auto complete words with dashes
 set list                       " Show whitespace
 set listchars=tab:..,trail:.   " Show whitespace as periods
-set nobackup                   " No backup file creation
 set noerrorbells               " No beeping
 set nohlsearch                 " No search highlighting
 set novisualbell               " No screen flashing
