@@ -14,6 +14,7 @@ set incsearch                  " Search a word as its typed
 set lisp                       " Auto complete words with dashes
 set list                       " Show whitespace
 set listchars=tab:..,trail:.   " Show whitespace as periods
+set nobackup                   " No backup file creation
 set noerrorbells               " No beeping
 set nohlsearch                " No search highlighting
 set novisualbell               " No screen flashing
