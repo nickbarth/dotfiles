@@ -16,7 +16,7 @@ set list                       " Show whitespace
 set listchars=tab:..,trail:.   " Show whitespace as periods
 set nobackup                   " No backup file creation
 set noerrorbells               " No beeping
-set nohlsearch                " No search highlighting
+set nohlsearch                 " No search highlighting
 set novisualbell               " No screen flashing
 set nowrap                     " No text wrapping
 set paste                      " Always be in paste mode in insert
