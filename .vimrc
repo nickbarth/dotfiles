@@ -46,14 +46,14 @@ function TabLine()
     let winnr = tabpagewinnr(i)
     let s .= '%' . i . 'T'
     let s .= (i == t ? '%1*' : '%2*')
-    let s .= ' %*'
+    let s .= '%*'
     let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
     let file = bufname(buflist[winnr - 1])
     let file = fnamemodify(file, ':p:t')
     if file == ''
       let file = '[No Name]'
     endif
-    let s .= i . ' ' . file . ' '
+    let s .= ' ' . i . ' ' . file . ' '
     let i = i + 1
   endwhile
   let s .= '%T%#TabLineFill#%='
