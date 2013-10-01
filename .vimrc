@@ -31,6 +31,32 @@ set smartcase                  " Case sensitive search when case is used
 set smarttab                   " Insert tab space on new line
 set spelllang=en_us            " Sets dictionary
 set nospell                    " Spell check off by default
+set showtabline=2              " Always show tabline
+set tabline=%!TabLine()        " Show numbered tabline
 set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
 set virtualedit=all            " Virtual spaces for ascii art
+
+function TabLine()
+  let s = ''
+  let t = tabpagenr()
+  let i = 1
+  while i <= tabpagenr('$')
+    let buflist = tabpagebuflist(i)
+    let winnr = tabpagewinnr(i)
+    let s .= '%' . i . 'T'
+    let s .= (i == t ? '%1*' : '%2*')
+    let s .= ' %*'
+    let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+    let file = bufname(buflist[winnr - 1])
+    let file = fnamemodify(file, ':p:t')
+    if file == ''
+      let file = '[No Name]'
+    endif
+    let s .= i . ' ' . file . ' '
+    let i = i + 1
+  endwhile
+  let s .= '%T%#TabLineFill#%='
+  let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
+  return s
+endfunction
