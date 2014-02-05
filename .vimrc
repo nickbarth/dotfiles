@@ -1,3 +1,16 @@
+" Vundle Setup
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'msanders/snipmate.vim'
+
+filetype plugin indent on
+
 " .vimrc
 syntax on                      " Syntax highlighting on
 color peachpuff                " My favorite color scheme
@@ -19,7 +32,7 @@ set noerrorbells               " No beeping
 set nohlsearch                 " No search highlighting
 set novisualbell               " No screen flashing
 set nowrap                     " No text wrapping
-set paste                      " Always be in paste mode in insert
+" set paste                      " Always be in paste mode in insert
 set path=**                    " Recursive path for easier ':find example.ext'
 set rnu                        " Relative line numbering for easier movement
 set nu                         " Show current line number
@@ -37,26 +50,24 @@ set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
 set virtualedit=all            " Virtual spaces for ascii art
 
-function TabLine()
-  let s = ''
-  let t = tabpagenr()
-  let i = 1
-  while i <= tabpagenr('$')
-    let buflist = tabpagebuflist(i)
-    let winnr = tabpagewinnr(i)
-    let s .= '%' . i . 'T'
-    let s .= (i == t ? '%1*' : '%2*')
-    let s .= '%*'
-    let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-    let file = bufname(buflist[winnr - 1])
-    let file = fnamemodify(file, ':p:t')
-    if file == ''
-      let file = '[No Name]'
-    endif
-    let s .= ' ' . i . ' ' . file . ' '
-    let i = i + 1
-  endwhile
-  let s .= '%T%#TabLineFill#%='
-  let s .= (tabpagenr('$') > 1 ? '%999XX' : 'X')
-  return s
-endfunction
+let mapleader = " "
+nnoremap <leader><leader> <c-^>
+
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>j :bp<CR>
+nnoremap <Leader>k :bn<CR>
+nnoremap <Leader>r :source ~/.vimrc<CR>
+nnoremap <leader>R :e ~/.vimrc<CR>
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>g :CtrlPBuffer<CR>
+nnoremap <leader>e :E<CR>
+nnoremap <leader>t :tabe<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>W :x<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>Q :qa!<CR>
+nnoremap <leader>s :vs<CR>
+nnoremap <leader>v :sp<CR>
+nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" 
+nnoremap <leader>a :tab expand("<cword>")<CR>
