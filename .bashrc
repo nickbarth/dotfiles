@@ -49,3 +49,6 @@ fi
 
 # JS CTags
 alias jstags='find . -type f -name "*.js" | grep -v "node_modules" | xargs ctags -a'
+
+# Git Reminder
+alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
