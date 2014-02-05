@@ -45,7 +45,6 @@ set smarttab                   " Insert tab space on new line
 set spelllang=en_us            " Sets dictionary
 set nospell                    " Spell check off by default
 set showtabline=2              " Always show tabline
-set tabline=%!TabLine()        " Show numbered tabline
 set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
 set virtualedit=all            " Virtual spaces for ascii art
