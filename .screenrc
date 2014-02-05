@@ -1,6 +1,0 @@
-startup_message off
-hardstatus alwayslastline
-shelltitle ''
-term "term xterm-256color"
-vbell off
-hardstatus string "%{=}%-w%{=r}%n %t%{-}%+w %=%c"
