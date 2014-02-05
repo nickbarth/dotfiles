@@ -2,20 +2,10 @@
 
 An archive of a few personal dotfiles for easy access.
 
-### Installation
-
-Install new dotfiles and backup your orignal ones.
+### Setup
 
 ```terminal
-curl -L https://raw.github.com/nickbarth/dotfiles/master/install.sh | sh
-```
-
-### Uninstallation
-
-Uninstall and restore your orignal dotfiles.
-
-```terminal
-curl -L https://raw.github.com/nickbarth/dotfiles/master/uninstall.sh | sh
+git clone https://github.com/nickbarth/dotfiles ~
 ```
 
 ### License
