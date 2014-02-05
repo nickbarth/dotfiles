@@ -42,10 +42,10 @@ alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
 export PATH=/usr/local/bin/:$PATH
 
 # Single TMUX
-if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  tmux a -d || tmux new
-  exit
-fi
+# if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+#   tmux a -d || tmux new
+#   exit
+# fi
 
 # JS CTags
 alias jstags='find . -type f -name "*.js" | grep -v "node_modules" | xargs ctags -a'
