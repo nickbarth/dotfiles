@@ -15,7 +15,7 @@ export EDITOR="vim"
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit --verbose'
-alias gd='git diff'
+alias gd='git diff --color'
 alias gl='git pull --rebase'
 alias gm='git merge'
 alias go='git checkout'
@@ -46,3 +46,6 @@ if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
   tmux a -d || tmux new
   exit
 fi
+
+# JS CTags
+alias jstags='find . -type f -name "*.js" | grep -v "node_modules" | xargs ctags -a'
