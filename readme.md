@@ -9,6 +9,7 @@ cd ~
 git init
 git remote add origin https://github.com/nickbarth/dotfiles 
 git pull origin master
+git submodule update --init --recursive
 ```
 
 ### License
