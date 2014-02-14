@@ -49,6 +49,9 @@ set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
 " set virtualedit=all            " Virtual spaces for ascii art
 
+" CtrlP Config
+let g:ctrlp_custom_ignore = 'node_modules|\.DS_Store|\.git'
+
 let mapleader = " "
 nnoremap <leader><leader> <c-^>
 
