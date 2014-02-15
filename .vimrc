@@ -13,7 +13,8 @@ filetype plugin indent on
 
 " ignores
 set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe,*.so
-set wildignore+=*.dat,*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff
+set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*/bower_components/*
+set wildignore+=*.dat
 
 " .vimrc
 syntax on                      " Syntax highlighting on
