@@ -11,6 +11,10 @@ Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 
+" ignores
+set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe,*.so
+set wildignore+=*.dat,*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff
+
 " .vimrc
 syntax on                      " Syntax highlighting on
 color peachpuff                " My favorite color scheme
@@ -48,9 +52,6 @@ set showtabline=2              " Always show tabline
 set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
 " set virtualedit=all            " Virtual spaces for ascii art
-
-" CtrlP Config
-let g:ctrlp_custom_ignore = 'node_modules|\.DS_Store|\.git'
 
 let mapleader = " "
 nnoremap <leader><leader> <c-^>
