@@ -53,6 +53,7 @@ set showtabline=2              " Always show tabline
 set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
 " set virtualedit=all            " Virtual spaces for ascii art
+set lazyredraw                 " don't redraw when don't have to
 
 let mapleader = " "
 nnoremap <leader><leader> <c-^>
