@@ -16,7 +16,8 @@ alias ga='git add'
 alias gb='git branch'
 alias gc='git commit --verbose'
 alias gd='git diff --color'
-alias gl='git pull --rebase'
+alias gl='git log --color'
+alias gu='git pull --rebase'
 alias gm='git merge'
 alias go='git checkout'
 alias gp='git push'
@@ -27,7 +28,8 @@ ga: git add
 gb: git branch
 gc: git commit
 gd: git diff
-gl: git pull
+gl: git log
+gu: git pull
 gm: git merge
 go: git checkout
 gp: git push
