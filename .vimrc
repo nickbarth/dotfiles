@@ -76,4 +76,4 @@ nnoremap <leader>s :vs<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" 
-nnoremap <leader>a :tab expand("<cword>")<CR>
+nnoremap <leader>a zaVkOjD
