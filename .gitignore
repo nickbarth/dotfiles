@@ -1,4 +1,5 @@
 *
+!.bashrc
 !.ctags
 !.gitignore
 !.gitmodules
@@ -8,5 +9,4 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
-!bashrc
 !readme.md
