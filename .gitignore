@@ -1,5 +1,4 @@
 *
-!.bashrc
 !.ctags
 !.gitignore
 !.gitmodules
@@ -9,4 +8,6 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
+!bashrc
 !readme.md
+#nick is a buttguy
