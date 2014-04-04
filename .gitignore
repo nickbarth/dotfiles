@@ -1,0 +1,12 @@
+*
+!.ctags
+!.gitignore
+!.gitmodules
+!.tmux.conf
+!.vimrc
+!/.vim
+!/.vim/
+!/.vim/*
+!/.vim/**/*
+!bashrc
+!readme.md
