@@ -21,7 +21,7 @@ alias gu='git pull --rebase'
 alias gm='git merge'
 alias go='git checkout'
 alias gp='git push'
-alias gs='git status'
+alias gs='git status -sb'
 alias gt='git tag'
 alias gh='echo "
 ga: git add
