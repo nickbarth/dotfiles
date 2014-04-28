@@ -12,7 +12,7 @@ Bundle 'msanders/snipmate.vim'
 filetype plugin indent on
 
 " ignores
-set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe,*.so
+set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
 set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*/bower_components/*
 set wildignore+=*.dat
 
