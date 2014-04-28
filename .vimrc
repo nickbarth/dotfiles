@@ -75,5 +75,5 @@ nnoremap <leader>Q :qa!<CR>
 nnoremap <leader>s :vs<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
-nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" 
+nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 nnoremap <leader>a zaVkOjD
