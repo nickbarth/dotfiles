@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/snipmate.vim"]
 	path = .vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "z"]
+	path = z
+	url = https://github.com/rupa/z

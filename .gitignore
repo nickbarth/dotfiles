@@ -9,4 +9,7 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
+!/z
+!/z/
+!/z/*
 !readme.md
