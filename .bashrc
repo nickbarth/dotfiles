@@ -55,4 +55,12 @@ alias jstags='find . -type f -name "*.js" | grep -v "node_modules" | xargs ctags
 # Git Reminder
 alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
 
+# Testing z
 . ~/z/z.sh
+
+# Tmux Bash History
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+shopt -s histappend
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND; history -a"
