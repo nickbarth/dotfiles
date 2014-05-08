@@ -77,3 +77,5 @@ nnoremap <leader>v :sp<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 nnoremap <leader>a zaVkOjD
+
+au BufRead,BufNewFile *.hx set filetype=haxe
