@@ -58,6 +58,26 @@ alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=n
 # Testing z
 . ~/z/z.sh
 
+# cd -> cdls
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
+
+cdls () {
+    cd "$1"
+    local cderr="$?"
+    if [ "$cderr" -eq '0' ]; then
+        [ "$1" = '-' ] || pwd
+        shift
+        ls $@
+    fi
+    return "$cderr"
+}
+
+alias cd='cdls'
+
 # Tmux Bash History
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
