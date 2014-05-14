@@ -9,7 +9,7 @@ cd ~
 git init
 git remote add origin https://github.com/nickbarth/dotfiles
 git fetch origin master
-git reset --hard HEAD
+git reset --hard origin/master
 git submodule update --init --recursive
 ```
 
