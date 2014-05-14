@@ -80,3 +80,7 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
+
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi

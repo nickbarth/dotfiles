@@ -1,15 +1,10 @@
 " Vundle Setup
 set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'msanders/snipmate.vim'
-
 filetype plugin indent on
+
+" Plugins
+silent! call pathogen#infect()
+silent! call pathogen#helptags()
 
 " ignores
 set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
