@@ -34,7 +34,7 @@ gm: git merge
 go: git checkout
 gp: git push
 gs: git status
-gt: git tag
+gt: git ls-tree
 "'
 
 # TMUX Keys
