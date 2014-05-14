@@ -6,6 +6,9 @@ filetype plugin indent on
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
+" Plugin Config
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 " ignores
 set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
 set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*/bower_components/*
@@ -51,26 +54,26 @@ set wildmode=longest,list      " Longest then list completion mode
 set lazyredraw                 " don't redraw when don't have to
 
 let mapleader = " "
-nnoremap <leader><leader> <c-^>
 
-nnoremap <Leader>l :ls<CR>
-nnoremap <Leader>d :bd<CR>
-nnoremap <Leader>j :bp<CR>
-nnoremap <Leader>k :bn<CR>
-nnoremap <Leader>r :source ~/.vimrc<CR>
-nnoremap <leader>R :e ~/.vimrc<CR>
+nnoremap <leader><leader> <c-^>
+nnoremap <leader>a zaVkOjD
+nnoremap <leader>d :bd<CR>
+nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :CtrlPBuffer<CR>
-nnoremap <leader>e :E<CR>
-nnoremap <leader>t :tabe<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>W :x<CR>
-nnoremap <leader>q :q!<CR>
-nnoremap <leader>Q :qa!<CR>
-nnoremap <leader>s :vs<CR>
-nnoremap <leader>v :sp<CR>
+nnoremap <leader>j :bp<CR>
+nnoremap <leader>k :bn<CR>
+nnoremap <leader>l :ls<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>r :source ~/.vimrc<CR>
+nnoremap <leader>s :cw<CR>
+nnoremap <leader>t :tabe<CR>
+nnoremap <leader>v :sp<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>Q :qa!<CR>
+nnoremap <leader>R :e ~/.vimrc<CR>
+nnoremap <leader>W :x<CR>
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
-nnoremap <leader>a zaVkOjD
 
 au BufRead,BufNewFile *.hx set filetype=haxe
