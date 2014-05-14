@@ -43,37 +43,34 @@ alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
 # Binaries
 export PATH=/usr/local/bin/:$PATH
 
-# Single TMUX
-# if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-#   tmux a -d || tmux new
-#   exit
-# fi
-
-# JS CTags
-alias jstags='find . -type f -name "*.js" | grep -v "node_modules" | xargs ctags -a'
+# Always TMUX
+if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+  tmux a -d || tmux new
+fi
 
 # Git Reminder
 alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
 
-# Testing z
+# z
 . ~/z/z.sh
 
-# cd -> cdls
+# Color ls
 if [[ "$(uname)" == "Darwin" ]]; then
-    alias ls='ls -G'
+  alias ls='ls -G'
 else
-    alias ls='ls --color'
+  alias ls='ls --color'
 fi
 
+# cd -> cdls
 cdls () {
-    cd "$1"
-    local cderr="$?"
-    if [ "$cderr" -eq '0' ]; then
-        [ "$1" = '-' ] || pwd
-        shift
-        ls $@
-    fi
-    return "$cderr"
+  cd "$1"
+  local cderr="$?"
+  if [ "$cderr" -eq '0' ]; then
+    [ "$1" = '-' ] || pwd
+    shift
+    ls $@
+  fi
+  return "$cderr"
 }
 
 alias cd='cdls'
