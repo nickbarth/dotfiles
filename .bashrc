@@ -50,7 +50,7 @@ if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
 fi
 
 # Kill Newest TMUX if not needed
-alias tx='tmux list-sessions -F "#{session_created} #{session_name}" | sort -r | awk "{print $2}" | head -1 | xargs tmux kill-session -t'
+alias tx='tmux list-sessions -F "#{session_created} #{session_name}" | sort -r | awk "{print \$2}" | head -1 | xargs tmux kill-session -t'
 
 # Git Reminder
 alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
