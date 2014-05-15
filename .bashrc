@@ -46,7 +46,11 @@ export PATH=/usr/local/bin/:$PATH
 
 # Always TMUX
 if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+  if [[ "$(uname)" == "Darwin" ]]; then
+    tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+  else
+    tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+  fi
 fi
 
 # Kill Newest TMUX if not needed
