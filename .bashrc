@@ -46,7 +46,7 @@ export PATH=/usr/local/bin/:$PATH
 
 # Always TMUX
 if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  tmux new
+  tmux new; exit
 fi
 
 # Git Reminder
