@@ -7,7 +7,7 @@ An archive of a few personal dotfiles for easy access.
 ```terminal
 cd ~
 git init
-git remote add origin git@github.com:nickbarth/dotfiles.git
+git remote add origin https://github.com/nickbarth/dotfiles
 git fetch origin master
 git reset --hard origin/master
 git submodule update --init --recursive
