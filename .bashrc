@@ -4,6 +4,7 @@
 set editing-mode vi
 set keymap vi
 set -o vi
+export EDITOR="vim"
 
 # Simpler Command Prompt
 PS1="[\h:\w]$ "
