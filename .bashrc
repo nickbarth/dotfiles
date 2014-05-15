@@ -7,7 +7,8 @@ set -o vi
 export EDITOR="vim"
 
 # Simpler Command Prompt
-PS1="[\h:\w]$ "
+# PS1="[\h:\w]$ "
+PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
 
 # Default Editor
 export EDITOR="vim"
