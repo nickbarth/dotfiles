@@ -46,13 +46,12 @@ export PATH=/usr/local/bin/:$PATH
 
 # Always TMUX
 if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  tmux new
-  [[ !$ == "xx" ]] && exit
+  tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
 fi
 
 # Kill Newest TMUX if not needed
 alias tx='tmux list-sessions -F "#{session_created} #{session_name}" | sort -r | awk "{print \$2}" | head -1 | xargs tmux kill-session -t'
-alias xx='tx; exit xx'
+alias xx='tx; touch /tmp/xx'
 
 # Git Reminder
 alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
