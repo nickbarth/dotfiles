@@ -52,6 +52,7 @@ set wildmode=longest,list      " Longest then list completion mode
 set virtualedit=               " No virtual spaces for ascii art
 set lazyredraw                 " don't redraw when don't have to
 set showtabline=0              " more space
+set hidden                     " don't ask to save
 
 let mapleader = " "
 
@@ -61,6 +62,7 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :CtrlPBuffer<CR>
+nnoremap <leader>o :vnew +read!tree\ %:p:h<CR>
 nnoremap <leader>i :echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
