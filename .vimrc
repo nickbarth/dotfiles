@@ -35,11 +35,11 @@ set noerrorbells               " No beeping
 set nohlsearch                 " No search highlighting
 set novisualbell               " No screen flashing
 set nowrap                     " No text wrapping
-" set paste                      " Always be in paste mode in insert
+set nopaste                    " Snip plugins require nopaste
 set path=**                    " Recursive path for easier ':find example.ext'
 set rnu                        " Relative line numbering for easier movement
 set nu                         " Show current line number
-set ruler                      " Show the current row and column at the bottom right of the screen
+set noruler                    " Show the current row and column at the bottom right of the screen
 set shiftwidth=2               " Two spaces inserted for indentation
 set shortmess+=I               " No startup screen
 set showmatch                  " Show matching bracket or parenthesis
@@ -47,11 +47,11 @@ set smartcase                  " Case sensitive search when case is used
 set smarttab                   " Insert tab space on new line
 set spelllang=en_us            " Sets dictionary
 set nospell                    " Spell check off by default
-set showtabline=2              " Always show tabline
 set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
-" set virtualedit=all            " Virtual spaces for ascii art
+set virtualedit=               " No virtual spaces for ascii art
 set lazyredraw                 " don't redraw when don't have to
+set showtabline=0              " more space
 
 let mapleader = " "
 
@@ -61,9 +61,10 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :CtrlPBuffer<CR>
-nnoremap <leader>j :bp<CR>
-nnoremap <leader>k :bn<CR>
-nnoremap <leader>l :ls<CR>
+nnoremap <leader>i :echo bufnr('%') expand('%:p')<CR>
+nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
+nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
+nnoremap <leader>l :buffers<CR>:buffer<space>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :source ~/.vimrc<CR>
@@ -74,6 +75,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>Q :qa!<CR>
 nnoremap <leader>R :e ~/.vimrc<CR>
 nnoremap <leader>W :x<CR>
+set pastetoggle=<leader>'
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 
 au BufRead,BufNewFile *.hx set filetype=haxe
