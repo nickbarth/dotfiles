@@ -84,6 +84,11 @@ cdls () {
 
 alias cd='cdls'
 
+# find cd
+fd () {
+  cd `find . -type d -name "*$1*"`
+}
+
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
