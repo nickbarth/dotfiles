@@ -24,7 +24,7 @@ alias go='git checkout'
 alias gp='git push'
 alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
-alias gh='cat ~/.bashrc | grep git'
+alias gh='cat $0 | grep git'
 
 # TMUX Keys
 alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
