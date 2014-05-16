@@ -4,7 +4,6 @@
 set editing-mode vi
 set keymap vi
 set -o vi
-export EDITOR="vim"
 
 # Simpler Command Prompt
 # PS1="[\h:\w]$ "
@@ -25,19 +24,7 @@ alias go='git checkout'
 alias gp='git push'
 alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
-alias gh='echo "
-ga: git add
-gb: git branch
-gc: git commit
-gd: git diff
-gl: git log
-gu: git pull
-gm: git merge
-go: git checkout
-gp: git push
-gs: git status
-gt: git ls-tree
-"'
+alias gh='cat ~/.bashrc | grep git'
 
 # TMUX Keys
 alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
