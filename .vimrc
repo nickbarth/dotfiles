@@ -66,7 +66,7 @@ nnoremap <leader>o :vnew +read!tree\ %:p:h<CR>
 nnoremap <leader>i :echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :buffers<CR>:buffer<space>
+nnoremap <leader>l :buffers<CR>:echo ' ->' bufnr('%') expand('%:p')<CR>:buffer<space>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :source ~/.vimrc<CR>
