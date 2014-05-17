@@ -49,6 +49,7 @@ alias xx='touch /tmp/xx && tx'
 alias rx='tmux rename-session `basename $(pwd)`'
 alias sx='tmux switch -t'
 alias cx='touch /tmp/cx && tmux kill-session'
+alias nx='source ~/.bashrc'
 
 # Git Reminder
 alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
