@@ -77,7 +77,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>Q :qa!<CR>
 nnoremap <leader>R :e ~/.vimrc<CR>
 nnoremap <leader>W :x<CR>
-set pastetoggle=<leader>'
+set pastetoggle=<leader>~
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 
 au BufRead,BufNewFile *.hx set filetype=haxe
