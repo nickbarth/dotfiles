@@ -62,11 +62,11 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :CtrlPBuffer<CR>
-nnoremap <leader>o :vnew +read!tree\ %:p:h<CR>
-nnoremap <leader>i :echo bufnr('%') expand('%:p')<CR>
+nnoremap <leader>i :echo bufnr('%') fugitive#statusline() expand('%:p')<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :buffers<CR>:echo ' ->' bufnr('%') expand('%:p')<CR>:b
+nnoremap <leader>l :buffers<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
+nnoremap <leader>o :vnew +read!tree\ %:p:h<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :source ~/.vimrc<CR>
@@ -74,10 +74,29 @@ nnoremap <leader>s :cw<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>J :cnext<CR>
+nnoremap <leader>K :cprevious<CR>
 nnoremap <leader>Q :qa!<CR>
 nnoremap <leader>R :e ~/.vimrc<CR>
 nnoremap <leader>W :x<CR>
 set pastetoggle=<leader>~
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
+
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gb :Git branch<Space>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>ge :Gedit<CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gm :Gmove<Space>
+nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>gw :Gwrite<CR><CR>
+nnoremap <space>gD :Gdiff ~
 
 au BufRead,BufNewFile *.hx set filetype=haxe
