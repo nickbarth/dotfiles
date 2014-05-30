@@ -53,6 +53,7 @@ set virtualedit=               " No virtual spaces for ascii art
 set lazyredraw                 " don't redraw when don't have to
 set showtabline=0              " more space
 set hidden                     " don't ask to save
+set notimeout                  " no leader key timeout
 
 let mapleader = " "
 
