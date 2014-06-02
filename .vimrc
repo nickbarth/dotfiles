@@ -20,6 +20,7 @@ color peachpuff                " My favorite color scheme
 
 set autoindent                 " Copy indent from current line when starting a new line
 set backspace=2                " Two character automatic placement after <
+set copyindent                 " Copy the previous indentation on autoindenting
 set cindent                    " C style indenting rules
 set complete=.,b,u,]           " Auto complete from current buff, loaded buffs, unloaded buffs, and tags
 set directory=/tmp/            " Hide backups away in the tmp directory
@@ -54,6 +55,7 @@ set lazyredraw                 " don't redraw when don't have to
 set showtabline=0              " more space
 set hidden                     " don't ask to save
 set notimeout                  " no leader key timeout
+set nostartofline              " don't to start of line on buffer switch
 
 let mapleader = " "
 
