@@ -12,8 +12,8 @@ PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
 # Default Editor
 export EDITOR="vim"
 
-# Reload Bashrc
-alias reload='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive'
+# Update Dotfiles
+alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive'
 
 # Git Commands
 alias ga='git add'
@@ -79,21 +79,19 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
 
-# Exit When Sourced
-if [ $# -eq 1 ]; then
-  exit 0
-fi
+# Ignore When Sourced
+if [ $# -ne 1 ]; then
+  # z
+  . ~/z/z.sh
 
-# z
-. ~/z/z.sh
+  # Always TMUX
+  if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+    if [[ "$(uname)" == "Darwin" ]]; then
+      tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+    else
+      tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+    fi
 
-# Always TMUX
-if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  if [[ "$(uname)" == "Darwin" ]]; then
-    tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-  else
-    tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+    [[ -e /tmp/cx ]] && tmux a -d
   fi
-  
-  [[ -e /tmp/cx ]] && tmux a -d
 fi
