@@ -82,7 +82,6 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
-
 # Ignore When Sourced
 if [ $# -eq 1 ]; then
   # Always TMUX
