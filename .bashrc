@@ -80,7 +80,7 @@ export HISTFILESIZE=100000
 shopt -s histappend
 
 # Ignore When Sourced
-if [ $# -ne 1 ]; then
+if [ $# -eq 1 ]; then
   # z
   . ~/z/z.sh
 
