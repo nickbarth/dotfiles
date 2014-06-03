@@ -13,7 +13,7 @@ PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
 export EDITOR="vim"
 
 # Update Dotfiles
-alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive'
+alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive && cd -'
 
 # Git Commands
 alias ga='git add'
