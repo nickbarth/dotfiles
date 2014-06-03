@@ -12,6 +12,9 @@ PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
 # Default Editor
 export EDITOR="vim"
 
+# Reload Bashrc
+alias reload='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive'
+
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
