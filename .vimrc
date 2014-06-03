@@ -58,9 +58,11 @@ set notimeout                  " no leader key timeout
 set nostartofline              " don't to start of line on buffer switch
 
 let mapleader = " "
+let C_COMMAND_PANE=1 | let C_COMMAND='echo COMMAND'
 
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>a zaVkOjD
+nnoremap <leader>c :exec "!tmux send-keys -t ".C_COMMAND_PANE." '".C_COMMAND."' Enter"<CR><CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
@@ -77,6 +79,7 @@ nnoremap <leader>s :cw<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>C :let C_COMMAND_PANE=1 \| let C_COMMAND=''<LEFT>
 nnoremap <leader>J :cnext<CR>
 nnoremap <leader>K :cprevious<CR>
 nnoremap <leader>Q :qa!<CR>
