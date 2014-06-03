@@ -35,8 +35,8 @@ alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
 # Binaries
 export PATH=/usr/local/bin/:$PATH
 
-
-# Kill Newest TMUX if not needed
+# Tmux Commands
+alias tx='tmux kill-session'
 alias tx='tmux kill-session'
 alias xx='touch /tmp/xx && tx'
 alias rx='tmux rename-session `basename $(pwd)`'
