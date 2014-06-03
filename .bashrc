@@ -79,14 +79,13 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
 
-
-if [ $# -ne 1 ]; then
+# Exit When Sourced
+if [ $# -eq 1 ]; then
   exit 0
 fi
 
 # z
 . ~/z/z.sh
-
 
 # Always TMUX
 if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
