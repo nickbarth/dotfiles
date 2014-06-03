@@ -37,7 +37,7 @@ export PATH=/usr/local/bin/:$PATH
 
 
 # Kill Newest TMUX if not needed
-alias tx='tmux list-sessions -F "#{session_created} #{session_name}" | sort -r | awk "{print \$2}" | head -1 | xargs tmux kill-session -t'
+alias tx='tmux kill-session'
 alias xx='touch /tmp/xx && tx'
 alias rx='tmux rename-session `basename $(pwd)`'
 alias sx='tmux switch -t'
