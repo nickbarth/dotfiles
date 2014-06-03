@@ -5,9 +5,11 @@ set editing-mode vi
 set keymap vi
 set -o vi
 
+# Color Param Prompt
+PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
+
 # Simpler Command Prompt
 # PS1="[\h:\w]$ "
-PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
 
 # Default Editor
 export EDITOR="vim"
