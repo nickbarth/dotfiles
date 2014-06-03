@@ -92,6 +92,6 @@ if [ $# -eq 1 ]; then
       tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
     fi
 
-    [[ -e /tmp/cx ]] && tmux a -d
+    [[ -e /tmp/cx ]] && rm /tmp/cx && tmux a -d
   fi
 fi
