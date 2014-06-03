@@ -35,16 +35,6 @@ alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
 # Binaries
 export PATH=/usr/local/bin/:$PATH
 
-# Always TMUX
-if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  if [[ "$(uname)" == "Darwin" ]]; then
-    tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-  else
-    tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-  fi
-  
-  [[ -e /tmp/cx ]] && tmux a -d
-fi
 
 # Kill Newest TMUX if not needed
 alias tx='tmux list-sessions -F "#{session_created} #{session_name}" | sort -r | awk "{print \$2}" | head -1 | xargs tmux kill-session -t'
@@ -56,9 +46,6 @@ alias nx='source ~/.bashrc'
 
 # Git Reminder
 alias whatdid='git log --color --pretty=format:"%x09%an%x09%ad%x09%s" --author=nickb'
-
-# z
-. ~/z/z.sh
 
 # Color ls
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -91,3 +78,23 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
+
+
+if [ $# -ne 1 ]; then
+  exit 0
+fi
+
+# z
+. ~/z/z.sh
+
+
+# Always TMUX
+if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+  if [[ "$(uname)" == "Darwin" ]]; then
+    tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+  else
+    tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+  fi
+  
+  [[ -e /tmp/cx ]] && tmux a -d
+fi
