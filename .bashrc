@@ -82,16 +82,13 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
-# Ignore When Sourced
-if [ $# -eq 1 ]; then
-  # Always TMUX
-  if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-    if [[ "$(uname)" == "Darwin" ]]; then
-      tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-    else
-      tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-    fi
-
-    [[ -e /tmp/cx ]] && rm /tmp/cx && tmux a -d
+# Always TMUX
+if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+  if [[ "$(uname)" == "Darwin" ]]; then
+    tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
+  else
+    tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
   fi
+
+  [[ -e /tmp/cx ]] && rm /tmp/cx && tmux a -d
 fi
