@@ -57,21 +57,7 @@ else
   alias ls='ls --color'
 fi
 
-# cd -> cdls
-cdls () {
-  cd "$1"
-  local cderr="$?"
-  if [ "$cderr" -eq '0' ]; then
-    [ "$1" = '-' ] || pwd
-    shift
-    ls $@
-  fi
-  return "$cderr"
-}
-
-alias cd='cdls'
-
-# find cd
+# find && cd
 fd () {
   cd `find . -type d -name "*$1*"`
 }
