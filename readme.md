@@ -14,4 +14,4 @@ git submodule update --init --recursive
 ```
 
 ### License
-WTFPL &copy; 2012 Nick Barth
+WTFPL &copy; 2014 Nick Barth
