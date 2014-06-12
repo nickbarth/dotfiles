@@ -46,7 +46,6 @@ set shortmess+=I               " No startup screen
 set showmatch                  " Show matching bracket or parenthesis
 set smartcase                  " Case sensitive search when case is used
 set smarttab                   " Insert tab space on new line
-set spelllang=en_us            " Sets dictionary
 set nospell                    " Spell check off by default
 set tabstop=2                  " Tabs are 2 spaces
 set wildmode=longest,list      " Longest then list completion mode
