@@ -66,7 +66,7 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :CtrlPBuffer<CR>
-nnoremap <leader>i :tabs<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>
+nnoremap <leader>i :tabs<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>l :buffers<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
