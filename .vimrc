@@ -95,9 +95,9 @@ nnoremap <space>ge :Gedit<CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>gm :Gmove<Space>
 nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gp :Ggrep<Space>
-nnoremap <space>gpl :Dispatch! git pull<CR>
-nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gg :Ggrep<Space>
+nnoremap <space>gu :Dispatch! git pull<CR>
+nnoremap <space>gp :Dispatch! git push<CR>
 nnoremap <space>gr :Gread<CR>
 nnoremap <space>gs :Gstatus<CR>
 nnoremap <space>gt :Gcommit -v -q %:p<CR>
