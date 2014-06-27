@@ -31,11 +31,14 @@ alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
 alias gh='cat ~/.bashrc | grep git'
 
-# TMUX Keys
-alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
-
 # Binaries
 export PATH=/usr/local/bin/:$PATH
+
+# Tmux Colors
+alias tmux='tmux -2'
+
+# Tmux Keys
+alias tmux_keys='tmux -f /dev/null -L temp start-server \; list-keys'
 
 # Tmux Commands
 alias tn='tmux new -s `basename $(pwd)`'
