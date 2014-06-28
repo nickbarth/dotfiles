@@ -16,7 +16,7 @@ set wildignore+=*.dat
 
 " .vimrc
 syntax on                      " Syntax highlighting on
-color peachpuff                " My favorite color scheme
+color jellybeans               " My favorite color scheme
 
 set autoindent                 " Copy indent from current line when starting a new line
 set backspace=2                " Two character automatic placement after <

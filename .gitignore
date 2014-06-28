@@ -12,5 +12,6 @@
 !/z
 !/z/
 !/z/*
+!DarkWash.itermcolors
 !readme.md
 .vim/.netrwhist
