@@ -41,7 +41,7 @@ alias tmux='tmux -2'
 # Tmux Commands
 alias xn='tmux new'
 alias xa='tmux a -d'
-alias xx='touch /tmp/xx && kill-session'
+alias xx='touch /tmp/xx && tmux kill-session'
 alias xr='tmux rename-session `basename $(pwd)`'
 alias xs='tmux switch -t'
 alias xh='alias | grep tmux'
