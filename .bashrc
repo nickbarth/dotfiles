@@ -44,7 +44,7 @@ alias xa='tmux a -d'
 alias xx='touch /tmp/xx && kill-session'
 alias xr='tmux rename-session `basename $(pwd)`'
 alias xs='tmux switch -t'
-alias xh="alias | grep tmux'
+alias xh='alias | grep tmux'
 
 # Color ls
 if [[ "$(uname)" == "Darwin" ]]; then
