@@ -42,6 +42,7 @@ alias tmux='tmux -2'
 alias xn='tmux new'
 alias xa='tmux a -d'
 alias xx='touch /tmp/xx && tmux kill-session'
+alias xf='touch /tmp/xf && tmux kill-session'
 alias xr='tmux rename-session `basename $(pwd)`'
 alias xs='tmux switch -t'
 alias xh='alias | grep tmux'
@@ -74,4 +75,6 @@ if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
   else
     tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
   fi
+
+  [[ -e /tmp/xf ]] && rm /tmp/xf && tmux a -d
 fi
