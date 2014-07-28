@@ -2,6 +2,16 @@
 
 An archive of a few personal dotfiles for easy access.
 
+### Pre Setup
+
+```terminal
+# Install Brew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+brew install git
+brew install tmux
+```
+
 ### Setup
 
 ```terminal
