@@ -93,7 +93,7 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>gc :Gcommit -v -q<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gl :Glog<CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>gm :Gmove<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gg :Ggrep<Space>
