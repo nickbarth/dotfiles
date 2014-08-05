@@ -66,18 +66,19 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :CtrlPBuffer<CR>
-nnoremap <leader>i :tabs<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:
+nnoremap <leader>i :split<CR>:wincmd w<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>l :buffers<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
-nnoremap <leader>o :vnew +read!tree\ %:p:h<CR>
+nnoremap <leader>o :vsplit<CR>:wincmd w<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
-nnoremap <leader>r :source ~/.vimrc<CR>
-nnoremap <leader>s :!aspell --dont-backup check %<CR><CR>
+nnoremap <leader>r :wq<CR>
+nnoremap <leader>s :wincmd w<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>z :!aspell --dont-backup check %<CR><CR>
 nnoremap <leader>C :let C_COMMAND_PANE=1 \| let C_COMMAND=''<LEFT>
 nnoremap <leader>J :cnext<CR>
 nnoremap <leader>K :cprevious<CR>
@@ -92,7 +93,7 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>gc :Gcommit -v -q<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gl :Glog<CR>
 nnoremap <space>gm :Gmove<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gg :Ggrep<Space>
@@ -100,8 +101,6 @@ nnoremap <space>gu :Dispatch! git pull --rebase<CR>
 nnoremap <space>gp :Dispatch! git push<CR>
 nnoremap <space>gr :Gread<CR>
 nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
 nnoremap <space>gw :Gwrite<CR><CR>
-nnoremap <space>gD :Gdiff ~
 
 au BufRead,BufNewFile *.hx set filetype=haxe
