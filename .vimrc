@@ -60,7 +60,7 @@ let mapleader = " "
 let C_COMMAND_PANE=1 | let C_COMMAND='echo COMMAND'
 
 nnoremap <leader><leader> <c-^>
-nnoremap <leader>a :cw<CR>
+nnoremap <leader>a :Copen<CR>
 nnoremap <leader>c :exec "!tmux send-keys -t ".C_COMMAND_PANE." '".C_COMMAND."' Enter"<CR><CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
