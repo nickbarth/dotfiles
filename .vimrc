@@ -60,7 +60,7 @@ let mapleader = " "
 let C_COMMAND_PANE=1 | let C_COMMAND='echo COMMAND'
 
 nnoremap <leader><leader> <c-^>
-nnoremap <leader>a :bot Copen<CR>
+nnoremap <leader>a :call ToggleDispatch()<CR>
 nnoremap <leader>c :wincmd o<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
