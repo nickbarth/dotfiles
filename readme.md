@@ -24,4 +24,6 @@ git submodule update --init --recursive
 ```
 
 ### License
-WTFPL &copy; 2014 Nick Barth
+The CC0 License
+
+[![CC0](http://i.creativecommons.org/l/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
