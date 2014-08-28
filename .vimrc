@@ -60,7 +60,7 @@ let mapleader = " "
 let C_COMMAND_PANE=1 | let C_COMMAND='echo COMMAND'
 
 nnoremap <leader><leader> <c-^>
-nnoremap <leader>a :call ToggleDispatch()<CR>
+nnoremap <leader>a :wincmd w<CR>
 nnoremap <leader>c :wincmd o<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
@@ -74,7 +74,7 @@ nnoremap <leader>o :vsplit<CR>:wincmd w<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :wq<CR>
-nnoremap <leader>s :wincmd w<CR>
+nnoremap <leader>s :call ToggleDispatch()<CR>
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
