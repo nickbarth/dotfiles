@@ -74,7 +74,7 @@ nnoremap <leader>o :vsplit<CR>:wincmd w<CR>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :wq<CR>
-nnoremap <leader>s :call ToggleDispatch()<CR>
+nnoremap <leader>s :call ToggleDispatch()<CR>G
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
@@ -84,6 +84,7 @@ nnoremap <leader>J :cnext<CR>
 nnoremap <leader>K :cprevious<CR>
 nnoremap <leader>Q :qa!<CR>
 nnoremap <leader>R :e ~/.vimrc<CR>
+nnoremap <leader>S :Copen<CR>G
 nnoremap <leader>W :x<CR>
 set pastetoggle=<leader>~
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
