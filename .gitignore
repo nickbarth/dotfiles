@@ -12,6 +12,9 @@
 !/z
 !/z/
 !/z/*
+!/tmux-resurrect
+!/tmux-resurrect/
+!/tmux-resurrect/*
 !DarkWash.itermcolors
 !readme.md
 .vim/.netrwhist
