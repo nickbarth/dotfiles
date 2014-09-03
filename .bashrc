@@ -17,6 +17,10 @@ export EDITOR="vim"
 # Update Dotfiles
 alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive && cd -'
 
+# Shorter !! Heheh
+alias last='echo `history | tail -n 2 | head -n 1` | sed "s/[0-9]* //"'
+alias k='`last`'
+
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
