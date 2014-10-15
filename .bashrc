@@ -66,6 +66,14 @@ fd () {
   cd `find . -type d -name "*$1*"`
 }
 
+# Tabs to Spaces
+space () {
+  find . -type f | while read file;
+  do
+    expand -t 2 $file > /tmp/expand && cat /tmp/expand | sed 's/^[[:space:]]*$//g' | sed 's/[[:space:]]*$//g' | tr -d '\015' > $file
+  done
+}
+
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
