@@ -74,6 +74,15 @@ space () {
   done
 }
 
+# Watch Directory Run Command
+watch () {
+  # Usage ``watch /src "make compile"``
+  while sleep 1
+  do
+    [[ `find $1 -type f -mtime -2s | wc -l | tr -d ' '` -ne 0 ]] && $($2) && echo "'$1' => '$2'"
+  done
+}
+
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
