@@ -77,7 +77,7 @@ space () {
 # Watch Directory Run Command
 watch () {
   # Usage ``watch /src "make compile"``
-  while sleep 1
+  while sleep 2
   do
     [[ `find $1 -type f -mtime -2s | wc -l | tr -d ' '` -ne 0 ]] && $($2) && echo "'$1' => '$2'"
   done
