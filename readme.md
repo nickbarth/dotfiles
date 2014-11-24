@@ -23,6 +23,17 @@ git reset --hard origin/master
 git submodule update --init --recursive
 ```
 
+## Alternatively
+
+```terminal
+git clone https://github.com/nickbarth/dotfiles
+cd dotfiles
+mv * ~
+mv .* ~
+cd ~
+git submodule update --init --recursive
+```
+
 ### License
 The CC0 License
 
