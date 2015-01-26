@@ -1,4 +1,3 @@
-" Vundle Setup
 set nocompatible
 filetype plugin indent on
 
@@ -69,8 +68,8 @@ nnoremap <leader>g :CtrlPBuffer<CR>
 nnoremap <leader>i :split<CR>:wincmd w<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :buffers<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
-nnoremap <leader>o :vsplit<CR>:wincmd w<CR>
+nnoremap <leader>l :buffers<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b<Space>
+nnoremap <leader>o :e<Space>**<LEFT>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :wq<CR>
@@ -78,7 +77,7 @@ nnoremap <leader>s :call ToggleDispatch()<CR>G
 nnoremap <leader>t :tabe<CR>
 nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
-nnoremap <leader>z :!aspell --dont-backup check %<CR><CR>
+nnoremap <leader>z :Dispatch! tmux send-keys -t 2.0 '' c-m<LEFT><LEFT><LEFT><LEFT><LEFT>
 nnoremap <leader>C :let C_COMMAND_PANE=1 \| let C_COMMAND=''<LEFT>
 nnoremap <leader>J :cnext<CR>
 nnoremap <leader>K :cprevious<CR>
