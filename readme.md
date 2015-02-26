@@ -26,7 +26,7 @@ git submodule update --init --recursive
 ### Alternatively
 
 ```terminal
-git clone --recursive https://github.com/nickbarth/dotfiles
+git clone --recursive --depth 1 https://github.com/nickbarth/dotfiles
 cd dotfiles
 mv * ~
 mv .* ~
