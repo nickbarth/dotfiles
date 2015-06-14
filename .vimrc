@@ -28,6 +28,7 @@ set foldlevelstart=99          " Unfold all code folding
 set foldmethod=indent          " Cold folding mode set to indents
 set ignorecase                 " Ignore case while searching
 set incsearch                  " Search a word as its typed
+set iskeyword+=-               " Dashes as part of words
 set lisp                       " Auto complete words with dashes
 set list                       " Show whitespace
 set listchars=tab:..,trail:.   " Show whitespace as periods
