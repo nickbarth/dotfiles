@@ -93,20 +93,13 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
-# z
-. ~/z/z.sh
-
 # export ANDROID_HOME=`brew --prefix android`
 # export PATH=${PATH}:$ANDROID_HOME/bin
 # export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Always TMUX
 if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
-  if [[ "$(uname)" == "Darwin" ]]; then
-    tmux new && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-  else
-    tmux a -d && [[ -e /tmp/xx ]] && rm /tmp/xx && exit
-  fi
+  tmux new
 fi
 
 export PATH=/usr/local/bin:$PATH
