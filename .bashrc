@@ -46,14 +46,11 @@ export PATH=/usr/local/bin/:$PATH
 alias tmux='tmux -2'
 
 # Tmux Commands
-alias xa='tmux a -d'
+alias xa='tmux a -t'
 alias xh='alias | grep tmux'
 alias xl='tmux ls'
 alias xn='tmux new'
-alias xr='tmux rename-session `basename $(pwd)`'
-alias xs='tmux switch -t'
-alias xt='tmux a -t'
-alias xx='touch /tmp/xx && tmux kill-session'
+alias xx='[ $TMUX ] && echo "TMUX ON" || echo "TMUX OFF"'
 
 # Color ls
 if [[ "$(uname)" == "Darwin" ]]; then
