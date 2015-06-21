@@ -17,10 +17,6 @@ export EDITOR="vim"
 # Update Dotfiles
 alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive && cd -'
 
-# Shorter !! Heheh
-alias last='echo `history | tail -n 2 | head -n 1` | sed "s/[0-9]* //"'
-alias k='`last`'
-
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
@@ -59,28 +55,6 @@ else
   alias ls='ls --color'
 fi
 
-# find && cd
-fd () {
-  cd `find . -type d -name "*$1*"`
-}
-
-# Tabs to Spaces
-space () {
-  find . -type f | while read file;
-  do
-    expand -t 2 $file > /tmp/expand && cat /tmp/expand | sed 's/^[[:space:]]*$//g' | sed 's/[[:space:]]*$//g' | tr -d '\015' > $file
-  done
-}
-
-# Watch Directory Run Command
-watch () {
-  # Usage ``watch /src "make compile"``
-  while sleep 2
-  do
-    [[ `find $1 -type f -mtime -2s | wc -l | tr -d ' '` -ne 0 ]] && $($2) && echo "'$1' => '$2'"
-  done
-}
-
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
@@ -89,10 +63,6 @@ shopt -s histappend
 
 # z
 . ~/z/z.sh
-
-# export ANDROID_HOME=`brew --prefix android`
-# export PATH=${PATH}:$ANDROID_HOME/bin
-# export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # Always TMUX
 if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
