@@ -64,8 +64,8 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
-# Always TMUX
-if [[ $- == *i* ]] && [[ -z "$TMUX" ]]; then
+# Always TMUX No Root
+if [[ -z "$TMUX" ]] && [[ $EUID -ne 0 ]]; then
   tmux new
 fi
 
