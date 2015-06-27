@@ -25,9 +25,6 @@
 [submodule ".vim/bundle/vim-toggledispatch"]
 	path = .vim/bundle/vim-toggledispatch
 	url = https://github.com/nickbarth/vim-toggledispatch
-[submodule "tmux-resurrect"]
-	path = tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
 [submodule ".vim/bundle/ZoomWin"]
 	path = .vim/bundle/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
