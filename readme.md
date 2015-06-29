@@ -28,8 +28,8 @@ git submodule update --init --recursive
 ```terminal
 git clone --recursive --depth 1 https://github.com/nickbarth/dotfiles
 cd dotfiles
-mv * ~
-mv .* ~
+cp -rf * ~
+cp -rf .* ~
 ```
 
 ### License
