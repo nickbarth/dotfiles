@@ -69,24 +69,15 @@ nnoremap <leader>g :CtrlPBuffer<CR>
 nnoremap <leader>i :split<CR>:wincmd w<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :buffers<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b<Space>
+nnoremap <leader>l :ls<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b<Space>
 nnoremap <leader>o :e<Space>**<LEFT>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :wq<CR>
 nnoremap <leader>s :call ToggleDispatch()<CR>G
-nnoremap <leader>t :tabe<CR>
-nnoremap <leader>v :sp<CR>
 nnoremap <leader>w :w<CR>
-nnoremap <leader>z :Dispatch! tmux send-keys -t 2.0 '' c-m<LEFT><LEFT><LEFT><LEFT><LEFT>
-nnoremap <leader>C :let C_COMMAND_PANE=1 \| let C_COMMAND=''<LEFT>
-nnoremap <leader>J :cnext<CR>
-nnoremap <leader>K :cprevious<CR>
-nnoremap <leader>Q :qa!<CR>
-nnoremap <leader>R :e ~/.vimrc<CR>
-nnoremap <leader>S :Copen<CR>G
-nnoremap <leader>W :x<CR>
-set pastetoggle=<leader>~
+nnoremap <leader>x :x<CR>
+nnoremap <leader>z :Dispatch! 
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 
 nnoremap <space>ga :Git add %:p<CR><CR>
