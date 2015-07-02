@@ -31,6 +31,7 @@ git clone --recursive --depth 1 https://github.com/nickbarth/dotfiles
 cd dotfiles
 cp -rf * ~
 cp -rf .* ~
+cd ../z && make
 ```
 
 ### License
