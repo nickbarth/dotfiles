@@ -10,6 +10,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 brew install git
 brew install tmux
+brew install cmake
 ```
 
 ### Setup
