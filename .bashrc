@@ -48,11 +48,16 @@ alias xl='tmux ls'
 alias xn='tmux new'
 alias xx='[ $TMUX ] && echo "TMUX ON" || echo "TMUX OFF"'
 
-# Color ls
-if [[ "$(uname)" == "Darwin" ]]; then
-  alias ls='ls -G'
-else
+# Normalize OSX / Linux                                                                                                                               
+if [[ "$(uname)" == "Darwin" ]]; then                                                                                                                 
+  alias ls='ls -G'                                                                                                                                    
+  alias copy='pbcopy'                                                                                                                                 
+else                                                                                                                             
   alias ls='ls --color'
+  alias copy='xclip -sel clip'                                                                                                                        
+
+  setxkbmap -layout us                                                                                                                                
+  xmodmap ~/.xmodmap                                                                                                                                  
 fi
 
 # Bash History
