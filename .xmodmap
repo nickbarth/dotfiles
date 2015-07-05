@@ -1,8 +1,9 @@
-clear Lock
-keysym Alt_R = Mode_switch
+! Super_R -> Mode_switch
+keysym Super_R = Mode_switch
 ! Capslock -> Escape Key
+clear Lock
 keycode 0x42 = Escape
 ! Alt_R + [ -> Page_Up
-keycode 0x22 = 0x0005B 0x0007B Page_Up Page_Up
+keycode 0x22 = 0x0005B 0x0007B Page_Up
 ! Alt_R + ] -> Page_Down
-keycode 0x23 = 0x0005D 0x0007D Page_Down Page_Down
+keycode 0x23 = 0x0005D 0x0007D Page_Down
