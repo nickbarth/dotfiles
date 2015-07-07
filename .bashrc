@@ -1,15 +1,15 @@
-# .bashrc
+#!/bin/bash
 
 # Vi Mode Rocks
 set editing-mode vi
 set keymap vi
 set -o vi
 
-# Color Param Prompt
-PS1="[\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
+# Color
+PS1="[\e[1;34m\u\e[0m\e[1;35m@\e[0m\e[1;34m\h\e[0m:\e[1;31m\w\e[0m]$ "
 
 # Simple Command Prompt
-# PS1="[\h:\w]$ "
+# PS1="[\u@\h:\w]$ "
 
 # Default Editor
 export EDITOR="vim"
@@ -56,9 +56,11 @@ else
   alias ls='ls --color'
   alias copy='xclip -sel clip'
 
-  if [[  "$DISPLAY" ]]; then
+  # KEYS=1 source .bashrc
+  if [[ "$DISPLAY" ]] && [[ "$KEYS" ]]; then
     setxkbmap -layout us
     xmodmap ~/.xmodmap
+    echo "Updated Keyboard Layout"
   fi
 fi
 
