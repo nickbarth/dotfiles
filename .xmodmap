@@ -7,3 +7,14 @@ keycode 0x42 = Escape
 keycode 0x22 = 0x0005B 0x0007B Page_Up
 ! Alt_R + ] -> Page_Down
 keycode 0x23 = 0x0005D 0x0007D Page_Down
+! Super_R + f -> F11
+keycode 0x29 = 0x00066 0x00046 F11
+! Super_R + h -> Left
+keycode 0x2b = 0x00068 0x00048 Left Left
+! Super_R + j -> Down
+keycode 0x2c = 0x0006a 0x0004a Down Down
+! Super_R + k -> Up
+keycode 0x2d = 0x0006b 0x0004b Up Up
+! Super_R + l -> Right
+keycode 0x2e = 0x0006c 0x0004c Right Right
+! [~]$ xev # Detect Keycodes
