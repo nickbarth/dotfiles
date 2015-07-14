@@ -6,7 +6,7 @@ silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
 " Plugin Config
-let g:UltiSnipsExpandTrigger="<c-j>"
+" NONE
 
 " ignores
 set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
@@ -16,6 +16,8 @@ set wildignore+=*.dat
 " .vimrc
 syntax on                      " Syntax highlighting on
 color jellybeans               " My favorite color scheme
+
+let mapleader = " "            " Set Spacebar as leader key
 
 set autoindent                 " Copy indent from current line when starting a new line
 set backspace=2                " Two character automatic placement after <
@@ -56,20 +58,16 @@ set hidden                     " don't ask to save
 set notimeout                  " no leader key timeout
 set nostartofline              " don't to start of line on buffer switch
 
-let mapleader = " "
-let C_COMMAND_PANE=1 | let C_COMMAND='echo COMMAND'
-
+" Convenience Commands
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>a :wincmd w<CR>
-nnoremap <leader>c :wincmd o<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>g :CtrlPBuffer<CR>
-nnoremap <leader>i :split<CR>:wincmd w<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :ls<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b<Space>
+nnoremap <leader>l :ls<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
+nnoremap <leader>t :tabe<CR>
 nnoremap <leader>o :e<Space>**<LEFT>
 nnoremap <leader>p :CtrlPClearCache<CR>
 nnoremap <leader>q :q!<CR>
@@ -77,22 +75,23 @@ nnoremap <leader>r :wq<CR>
 nnoremap <leader>s :call ToggleDispatch()<CR>G
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
-nnoremap <leader>z :Dispatch! 
+nnoremap <leader>z :Dispatch!<Space>
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 
-nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gb :Git branch<Space>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gm :Gmove<Space>
-nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gg :Ggrep<Space>
-nnoremap <space>gu :Dispatch! git pull --rebase<CR>
-nnoremap <space>gp :Dispatch! git push<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gw :Gwrite<CR><CR>
+" Git Commands
+nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gb :Git branch<Space>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gm :Gmove<Space>
+nnoremap <leader>go :Git checkout<Space>
+nnoremap <leader>gg :Ggrep<Space>
+nnoremap <leader>gu :Dispatch! git pull --rebase<CR>
+nnoremap <leader>gp :Dispatch! git push<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gw :Gwrite<CR><CR>
 
 au BufRead,BufNewFile *.hx set filetype=haxe
