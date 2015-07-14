@@ -55,14 +55,16 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   alias ls='ls --color'
   alias copy='xclip -sel clip'
+fi
 
-  # KEYS=1 source .bashrc
-  if [[ "$DISPLAY" ]] && [[ "$KEYS" ]]; then
+# Keyboard Layout
+kk () {
+  if [[ "$DISPLAY" ]]; then
     setxkbmap -layout us
     xmodmap ~/.xmodmap
     echo "Updated Keyboard Layout"
   fi
-fi
+}
 
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
