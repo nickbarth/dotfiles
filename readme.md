@@ -13,7 +13,7 @@ LINUX/APTGET: git make tmux
 
 ```terminal
 git clone --recursive --depth 1 https://github.com/nickbarth/dotfiles
-# git submodule update --init --recursive
+git submodule update --init --recursive
 cd dotfiles
 cp -rf * ~
 cp -rf .* ~
