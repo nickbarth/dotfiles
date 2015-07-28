@@ -12,9 +12,9 @@ LINUX/APTGET: git make tmux
 ### Setup
 
 ```terminal
-git clone --recursive --depth 1 https://github.com/nickbarth/dotfiles
-git submodule update --init --recursive
+git clone git@github.com:nickbarth/dotfiles.git
 cd dotfiles
+git submodule update --init --recursive
 cp -rf * ~
 cp -rf .* ~
 cd ../z && make
