@@ -5,19 +5,19 @@ clear mod4
 ! Switch Control and Command Keys
 keycode 105 =
 keycode 206 =
-keycode 133 = Control_L NoSymbol Control_L
-keycode 134 = Control_R NoSymbol Control_R
-keycode 37 = Super_L NoSymbol Super_L
+keycode 133 = Control_L Control_L Control_L
+keycode 134 = Control_R Control_R Control_R
+keycode 37 = Super_L Super_L Super_L
 add control = Control_L
 add control = Control_R
-add mod4 = Super_L
+add mod4 = Super_R
 ! Super_R -> Mode_switch
 keysym Super_R = Mode_switch
 ! Capslock -> Escape Key
 keycode 0x42 = Escape
 ! Alt_R + [ -> Page_Up
-keycode 0x22 = 0x0005B 0x0007B Page_Up
+keycode 0x22 = 0x0005B 0x0007B Page_Up Page_Up
 ! Alt_R + ] -> Page_Down
-keycode 0x23 = 0x0005D 0x0007D Page_Down
+keycode 0x23 = 0x0005D 0x0007D Page_Down Page_Down
 ! Super_R + f -> F11 ( Full Screen )
 keycode 0x29 = 0x00066 0x00046 F11
