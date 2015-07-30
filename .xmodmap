@@ -10,7 +10,7 @@ keycode 134 = Control_R Control_R Control_R
 keycode 37 = Super_L Super_L Super_L
 add control = Control_L
 add control = Control_R
-add mod4 = Super_R
+add mod4 = Super_L
 ! Super_R -> Mode_switch
 keysym Super_R = Mode_switch
 ! Capslock -> Escape Key
