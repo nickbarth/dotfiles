@@ -18,7 +18,7 @@ export EDITOR="vim"
 alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive && cd -'
 
 # IP
-alias getip='curl ip.appspot.com'
+alias getip='curl ip.appspot.com && echo'
 
 # Git Commands
 alias ga='git add'
@@ -61,7 +61,7 @@ else
 fi
 
 # Keyboard Layout
-kk () {
+setkb () {
   if [[ "$DISPLAY" ]]; then
     setxkbmap -layout us
     xmodmap ~/.xmodmap
@@ -78,9 +78,9 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
-# Always TMUX No Root
-if [[ -z "$TMUX" ]] && [[ $EUID -ne 0 ]]; then
-  tmux new
+# TMUX Unless Nested, X Server, or Root
+if [[ -z "$TMUX" ]] && [[ "$COLORTERM" == "gnome-terminal" ]] && [[ $EUID -ne 0 ]]; then
+  tmux new && exit
 fi
 
 export PATH=/usr/local/bin:$PATH
