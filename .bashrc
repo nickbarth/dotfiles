@@ -17,6 +17,9 @@ export EDITOR="vim"
 # Update Dotfiles
 alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive && cd -'
 
+# IP
+alias getip='curl ip.appspot.com'
+
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
