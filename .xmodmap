@@ -3,14 +3,12 @@ clear Lock
 clear control
 clear mod4
 ! Switch Control and Command Keys
-keycode 105 =
-keycode 206 =
-keycode 133 = Control_L Control_L Control_L
-keycode 134 = Control_R Control_R Control_R
-keycode 37 = Super_L Super_L Super_L
-add control = Control_L
+keycode 133 = Control_L
+keycode 134 = Control_R
+keycode 37 = Super_L
+add control = Super_L
 add control = Control_R
-add mod4 = Super_L
+add mod4 = Control_L
 ! Super_R -> Mode_switch
 keysym Super_R = Mode_switch
 ! Capslock -> Escape Key
