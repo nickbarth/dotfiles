@@ -38,7 +38,7 @@ set noerrorbells               " No beeping
 set nohlsearch                 " No search highlighting
 set novisualbell               " No screen flashing
 set nowrap                     " No text wrapping
-set nopaste                    " Snip plugins require nopaste
+set paste                      " No plugin is worth changing this
 set path=**                    " Recursive path for easier ':find example.ext'
 set rnu                        " Relative line numbering for easier movement
 set nu                         " Show current line number
