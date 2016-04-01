@@ -38,13 +38,6 @@ export PATH=/usr/local/bin/:$PATH
 # Tmux Colors
 alias tmux='tmux -2'
 
-# Tmux Commands
-alias xa='tmux a -t'
-alias xh='alias | grep tmux'
-alias xl='tmux ls'
-alias xn='tmux new'
-alias xx='[ $TMUX ] && echo "TMUX ON" || echo "TMUX OFF"'
-
 # Normalize OSX / Linux
 if [[ "$(uname)" == "Darwin" ]]; then
   alias ls='ls -G'
@@ -71,10 +64,5 @@ shopt -s histappend
 
 # z
 . ~/z/z.sh
-
-# TMUX Unless Nested, X Server, or Root
-if [[ -z "$TMUX" ]] && [[ "$COLORTERM" == "gnome-terminal" ]] && [[ $EUID -ne 0 ]]; then
-  tmux new && exit
-fi
 
 export PATH=/usr/local/bin:$PATH
