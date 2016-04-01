@@ -6,19 +6,13 @@ set keymap vi
 set -o vi
 
 # Color
-PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\w\e[0m]$ "
+PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
 
 # Simple Command Prompt
 # PS1="[\u@\h:\w]$ "
 
 # Default Editor
 export EDITOR="vim"
-
-# Update Dotfiles
-alias dots='cd ~ && git fetch origin master && git reset --hard origin/master && git submodule update --init --recursive && cd -'
-
-# IP
-alias getip='curl ip.appspot.com && echo'
 
 # Git Commands
 alias ga='git add'
