@@ -20,6 +20,16 @@ cp -rf .* ~
 cd ../z && make
 ```
 
+###
+
+```terminal
+# https://taihen.org/managing-dotfiles-with-gnu-stow/
+
+git clone git@github.com:nickbarth/dotfiles.git
+cd dotfiles
+stow dev
+```
+
 ### License
 The CC0 License
 
