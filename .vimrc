@@ -28,6 +28,7 @@ set complete=.,b,u,]           " Auto complete from current buff, loaded buffs, 
 set directory=/tmp/            " Hide backups away in the tmp directory
 set expandtab                  " Expand tabs to spaces
 set foldlevelstart=99          " Unfold all code folding
+set foldnestmax=2              " Easy zj / zk between methods         
 set foldmethod=indent          " Cold folding mode set to indents
 set ignorecase                 " Ignore case while searching
 set incsearch                  " Search a word as its typed
