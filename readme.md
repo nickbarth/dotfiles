@@ -5,8 +5,8 @@ An archive of a few personal dotfiles for easy access.
 ### Dependencies
 
 ```terminal
-OSX/BREW: git cmake tmux
-LINUX/APTGET: git make tmux
+OSX/BREW: git cmake tmux xstow
+LINUX/APTGET: git make tmux xstow
 ```
 
 ### Setup
@@ -23,11 +23,9 @@ cd ../z && make
 ###
 
 ```terminal
-# https://taihen.org/managing-dotfiles-with-gnu-stow/
-
-git clone git@github.com:nickbarth/dotfiles.git
-cd dotfiles
-stow dev
+git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
+rm ../.bashrc
+xstow .
 ```
 
 ### License
