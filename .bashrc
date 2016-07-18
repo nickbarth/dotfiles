@@ -14,6 +14,10 @@ PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
 # Default Editor
 export EDITOR="vim"
 
+# Git Config
+git config --global push.default current
+
+
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
