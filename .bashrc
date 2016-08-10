@@ -14,6 +14,12 @@ PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
 # Default Editor
 export EDITOR="vim"
 
+# Nav Commands
+alias -- -='cd -'
+alias x='exit'
+alias ..='cd ..'
+alias ...='..;..'
+
 # Git Config
 git config --global push.default current
 
