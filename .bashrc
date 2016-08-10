@@ -16,7 +16,6 @@ export EDITOR="vim"
 
 # Nav Commands
 complete -W "`grep ^Host ~/.ssh/config | awk '{print $2}' | xargs`" ssh
-
 alias -- -='cd -'
 alias x='exit'
 alias ..='cd ..'
