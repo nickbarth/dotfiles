@@ -17,7 +17,6 @@ export EDITOR="vim"
 # Git Config
 git config --global push.default current
 
-
 # Git Commands
 alias ga='git add'
 alias gb='git branch'
@@ -36,9 +35,6 @@ alias gr='git reset --hard HEAD; git clean -fd'
 alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
 alias gh='alias | grep git'
-
-# Binaries
-export PATH=/usr/local/bin/:$PATH
 
 # Tmux Colors
 alias tmux='tmux -2'
@@ -69,5 +65,3 @@ shopt -s histappend
 
 # z
 . ~/z/z.sh
-
-export PATH=/usr/local/bin:$PATH
