@@ -62,6 +62,7 @@ set nostartofline              " don't to start of line on buffer switch
 
 " Convenience Commands
 nnoremap <leader><leader> <c-^>
+nnoremap <leader>~ :set invnumber<CR>
 nnoremap <leader>a :wincmd w<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
