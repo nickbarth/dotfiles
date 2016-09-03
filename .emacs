@@ -11,7 +11,7 @@
 (setq slime-contribs '(slime-fancy))
 
 (require 'evil)
-(evil-mode t)
+; (evil-mode t)
 
 (global-font-lock-mode t)
 (set-default 'truncate-lines t)
@@ -21,5 +21,11 @@
 (menu-bar-mode -1)
 
 (setq tab-width 2)
+(setq ad-redefinition-action 'accept)
+(setq backup-inhibited t)
+(setq auto-save-default nil)
+
 (defvaralias 'c-basic-offset 'tab-width)
 (defvaralias 'cperl-indent-level 'tab-width)
+
+(global-set-key (kbd "C-x C-c") 'kill-emacs)
