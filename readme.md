@@ -18,11 +18,14 @@ stow -v2 .
 ### Extras
 
 ```bash
-# working with golang
+# golang
 git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 
-# working with python
+# python
 git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+
+# vuejs
+git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vue
 ```
 
 ### License
