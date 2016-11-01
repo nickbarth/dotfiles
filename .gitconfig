@@ -4,4 +4,4 @@
 name = Nick Barth
 email = nickbarth@live.com
 [push]
-  default = matching
+default = simple
