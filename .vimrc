@@ -26,6 +26,9 @@ set copyindent                 " Copy the previous indentation on autoindenting
 set cindent                    " C style indenting rules
 set complete=.,b,u,]           " Auto complete from current buff, loaded buffs, unloaded buffs, and tags
 set directory=/tmp/            " Hide backups away in the tmp directory
+set nowritebackup              " No backup file while editing
+set noswapfile                 " No swap files
+set nobackup                   " No backup files
 set expandtab                  " Expand tabs to spaces
 set foldlevelstart=99          " Unfold all code folding
 set foldnestmax=2              " Easy zj / zk between methods         
