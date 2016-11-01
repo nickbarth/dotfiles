@@ -66,22 +66,17 @@ set nostartofline              " don't to start of line on buffer switch
 " Convenience Commands
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>~ :set invnumber<CR>
-nnoremap <leader>a :wincmd w<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>l :ls<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
-nnoremap <leader>t :tabe<CR>
-nnoremap <leader>o :e<Space>**<LEFT>
-nnoremap <leader>p :CtrlPClearCache<CR>
+nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>r :wq<CR>
-nnoremap <leader>s :call ToggleDispatch()<CR>G
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
-nnoremap <leader>z :Dispatch!<Space>
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
 
 " Git Commands
