@@ -15,7 +15,7 @@ LINUX/APTGET: git make tmux stow
 git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
 stow -v2 .
 ```
-### Extra
+### Extras
 
 ```bash
 # working with golang
