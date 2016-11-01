@@ -17,7 +17,7 @@ stow -v2 .
 ```
 ### Extra
 
-```terminal
+```bash
 # working with golang
 git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 
