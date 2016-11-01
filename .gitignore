@@ -17,4 +17,3 @@
 !/tmux-resurrect/*
 !DarkWash.itermcolors
 !readme.md
-.vim/.netrwhist
