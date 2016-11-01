@@ -12,14 +12,6 @@ LINUX/APTGET: git make tmux stow
 ### Setup
 
 ```terminal
-git clone git@github.com:nickbarth/dotfiles.git && cd dotfiles
-git submodule update --init --recursive
-stow -v2 .
-```
-
-###
-
-```terminal
 git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
 stow -v2 .
 ```
