@@ -15,6 +15,15 @@ LINUX/APTGET: git make tmux stow
 git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
 stow -v2 .
 ```
+### Extra
+
+```terminal
+# working with golang
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+
+# working with python
+git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
+```
 
 ### License
 The CC0 License
