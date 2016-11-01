@@ -14,14 +14,14 @@ LINUX/APTGET: git make tmux stow
 ```terminal
 git clone git@github.com:nickbarth/dotfiles.git && cd dotfiles
 git submodule update --init --recursive
-stow .
+stow -v2 .
 ```
 
 ###
 
 ```terminal
 git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
-stow .
+stow -v2 .
 ```
 
 ### License
