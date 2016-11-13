@@ -16,7 +16,7 @@ git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
 stow -v2 .
 
 # clear old
-stow -v2 . &> /dev/stdout | grep Skipping | awk '{ print $3 }' | xargs -I{} rm ~/{}"
+stow -v2 . &> /dev/stdout | grep Skipping | awk '{ print $3 }' | xargs -I{} rm ~/{}
 ```
 ### Extras
 
