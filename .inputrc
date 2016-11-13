@@ -4,4 +4,4 @@ set keymap vi-command
 # http://vim.wikia.com/wiki/Use_vi_shortcuts_in_terminal
 
 set completion-ignore-case on
-menu-complete-display-prefix on
+set menu-complete-display-prefix on
