@@ -12,7 +12,7 @@ LINUX/APTGET: git make tmux stow
 ### Setup
 
 ```terminal
-git clone --recursive git@github.com:nickbarth/dotfiles.git && cd dotfiles
+git clone --recursive https://github.com/nickbarth/dotfiles && cd dotfiles
 stow -v2 .
 
 # clear old
