@@ -67,7 +67,7 @@ set nostartofline              " don't to start of line on buffer switch
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>~ :set invnumber<CR>
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>e :E<CR>
+nnoremap <leader>e :Explore<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
