@@ -15,11 +15,10 @@ PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
 export EDITOR="vim"
 
 # Nav Commands
-complete -W "`grep ^Host ~/.ssh/config | awk '{print $2}' | xargs`" ssh
+# complete -W "`grep ^Host ~/.ssh/config | awk '{print $2}' | xargs`" ssh
 alias -- -='cd -'
 alias x='exit'
 alias ..='cd ..'
-alias ...='..;..'
 
 # Git Config
 git config --global push.default current
@@ -44,26 +43,9 @@ alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
 alias gh='alias | grep git'
 
-# Tmux Colors
+# default params
 alias tmux='tmux -2'
-
-# Normalize OSX / Linux
-if [[ "$(uname)" == "Darwin" ]]; then
-  alias ls='ls -G'
-  alias copy='pbcopy'
-else
-  alias ls='ls --color'
-  alias copy='xclip -sel clip'
-fi
-
-# Keyboard Layout
-setkb () {
-  if [[ "$DISPLAY" ]]; then
-    setxkbmap -layout us
-    xmodmap ~/.xmodmap
-    echo "Updated Keyboard Layout"
-  fi
-}
+alias ls='ls -G'
 
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
@@ -74,10 +56,14 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+# go lang
+# export GOROOT=/usr/local/opt/go/libexec
+# export GOPATH=$HOME/.go
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-# virtualenv
-export WORKON_HOME=~/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# python virtualenv
+# export WORKON_HOME=~/virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
+
+# node
+# export PATH=./node_modules/.bin:$PATH
