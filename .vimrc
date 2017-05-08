@@ -74,7 +74,7 @@ nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>l :ls<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
 nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>q :q!<CR>
-" nnoremap <leader>r :Dispatch! tmux send-key -t right "echo make" C-m<CR>
+" nnoremap <leader>r :Dispatch! tmux send-key -t right "echo build/run" C-m<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>; :grep -Ri --exclude="tags" --exclude-dir="node_modules" --exclude-dir="git" --exclude="min" "" .<LEFT><LEFT><LEFT>
