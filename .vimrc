@@ -45,9 +45,9 @@ set novisualbell               " No screen flashing
 set nowrap                     " No text wrapping
 set paste                      " No plugin is worth changing this
 set path=**                    " Recursive path for easier ':find example.ext'
-set rnu                        " Relative line numbering for easier movement
-set nu                         " Show current line number
-set noruler                    " Show the current row and column at the bottom right of the screen
+set nornu                      " Hide relative line numbering for easier movement
+set nonu                       " Hide current line number
+set ruler                      " Show the current row and column at the bottom right of the screen
 set shiftwidth=2               " Two spaces inserted for indentation
 set shortmess+=I               " No startup screen
 set showmatch                  " Show matching bracket or parenthesis
