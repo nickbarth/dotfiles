@@ -1,7 +1,7 @@
 set nocompatible
 filetype plugin indent on
 
-" Plugins
+" plugins
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 
@@ -14,7 +14,7 @@ set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
 set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*/bower_components/*
 set wildignore+=*.dat
 
-" plugins
+" plugins config
 let g:slime_target = "tmux"
 
 if executable('ag')
