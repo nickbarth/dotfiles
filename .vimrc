@@ -28,7 +28,6 @@ if executable('ack')
   command -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
 endif
 
-
 " .vimrc
 syntax on                      " Syntax highlighting on
 color jellybeans               " My favorite color scheme
