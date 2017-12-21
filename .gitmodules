@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-autocomplpop"]
 	path = .vim/bundle/vim-autocomplpop
 	url = https://github.com/nickbarth/vim-autocomplpop.git
+[submodule ".vim/bundle/vim-slime"]
+	path = .vim/bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime
