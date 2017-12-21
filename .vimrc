@@ -14,6 +14,21 @@ set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
 set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*/bower_components/*
 set wildignore+=*.dat
 
+" plugins
+let g:slime_target = "tmux"
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+if executable('ack')
+  " ack search eg :Ack --php echo
+  set grepprg=ack\ -s\ -H\ --nogroup\ --nocolor\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+  command -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
+endif
+
+
 " .vimrc
 syntax on                      " Syntax highlighting on
 color jellybeans               " My favorite color scheme
@@ -97,4 +112,6 @@ nnoremap <leader>gw :Gwrite<CR><CR>
 
 au BufRead,BufNewFile *.hx set filetype=haxe
 au BufNewFile,BufRead *.py setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.php setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.scss setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.html setfiletype=htmldjango
