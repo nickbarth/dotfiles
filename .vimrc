@@ -11,15 +11,11 @@ match OverLength /\%81v.\+/
 
 " ignores
 set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
-set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*/bower_components/*
-set wildignore+=*.dat
+set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*.dat,*.map,*.min.*
+set wildignore+=*/bower_components/*,*/vendor/*,*/dist/*,*/storage/*,*/static/*
 
 " plugins config
 let g:slime_target = "tmux"
-
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
 
 if executable('ack')
   " ack search eg :Ack --php echo
