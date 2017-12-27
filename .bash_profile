@@ -56,6 +56,15 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
+# fzf
+# https://github.com/atweiden/fzf-extras/blob/master/fzf-extras.sh
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
 # go lang
 # export GOROOT=/usr/local/opt/go/libexec
 # export GOPATH=$HOME/.go
