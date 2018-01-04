@@ -16,6 +16,7 @@ set wildignore+=*/bower_components/*,*/vendor/*,*/dist/*,*/storage/*,*/static/*
 
 " plugins config
 let g:slime_target = "tmux"
+" nmap <c-c><c-c> :SlimeSend1 make<CR>
 
 if executable('ack')
   " ack search eg :Ack --php echo
