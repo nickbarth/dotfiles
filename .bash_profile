@@ -56,6 +56,10 @@ shopt -s histappend
 # z
 . ~/z/z.sh
 
+# slime
+let g:slime_target = "tmux"
+" nmap <c-c><c-c> :SlimeSend1 make<CR>
+
 # fzf
 # https://github.com/atweiden/fzf-extras/blob/master/fzf-extras.sh
 fd() {
