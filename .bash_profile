@@ -42,6 +42,7 @@ alias gr='git reset --hard HEAD; git clean -fd'
 alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
 alias gh='alias | grep git'
+alias upstream='git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`'
 
 # default params
 alias tmux='tmux -2'
