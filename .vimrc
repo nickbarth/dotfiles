@@ -82,7 +82,7 @@ nnoremap <leader>e :Explore<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :ls<CR>:echo bufnr('%') fugitive#statusline() expand('%:p')<CR>:b
+nnoremap <leader>l :CtrlPBuffer<CR>
 nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>w :w<CR>
