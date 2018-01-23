@@ -75,7 +75,7 @@ set notimeout                  " no leader key timeout
 set nostartofline              " don't to start of line on buffer switch
 
 " Convenience Commands
-nnoremap <leader><leader> <c-^>
+nnoremap <leader><leader> :e#<CR>
 nnoremap <leader>~ :set invnumber<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :Explore<CR>
