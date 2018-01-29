@@ -73,6 +73,7 @@ set showtabline=0              " more space
 set hidden                     " don't ask to save
 set notimeout                  " no leader key timeout
 set nostartofline              " don't to start of line on buffer switch
+set t_Co=256                   " iTerm2 Terminal Colors
 
 " Convenience Commands
 nnoremap <leader><leader> :e#<CR>
