@@ -20,18 +20,6 @@ stow -v2 .
 # clear old
 stow -v2 . &> /dev/stdout | grep Skipping | awk '{ print $3 }' | xargs -I{} rm ~/{}
 ```
-### Extras
-
-```bash
-# golang
-git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
-
-# python
-git clone --recursive https://github.com/davidhalter/jedi-vim.git ~/.vim/bundle/jedi-vim
-
-# vuejs
-git clone https://github.com/posva/vim-vue.git ~/.vim/bundle/vim-vue
-```
 
 ### License
 The CC0 License
