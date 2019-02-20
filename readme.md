@@ -14,7 +14,7 @@ apt install git make tmux stow rlwrap autojump
 ### Setup
 
 ```terminal
-git clone --recursive https://github.com/nickbarth/dotfiles && cd dotfiles
+git clone git@github.com:nickbarth/dotfiles.git && cd dotfiles
 stow -v2 .
 
 # clear old
