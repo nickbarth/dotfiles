@@ -6,9 +6,9 @@ An archive of a few personal dotfiles for easy access.
 
 ```terminal
 # osx:
-brew install git cmake tmux stow rlwrap autojump
+brew install git cmake tmux stow rlwrap autojump ack
 # ubuntu: 
-apt install git make tmux stow rlwrap autojump
+apt install git make tmux stow rlwrap autojump ack
 ```
 
 ### Setup
