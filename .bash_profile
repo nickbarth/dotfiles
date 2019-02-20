@@ -54,8 +54,9 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 shopt -s histappend
 
-# z
-. ~/z/z.sh
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+alias z='j'
 
 # fzf
 # https://github.com/atweiden/fzf-extras/blob/master/fzf-extras.sh

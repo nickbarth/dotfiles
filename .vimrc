@@ -2,8 +2,17 @@ set nocompatible
 filetype plugin indent on
 
 " plugins
-silent! call pathogen#infect()
-silent! call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-dispatch'
+	Plug 'tpope/vim-surround'
+	Plug 'jpalardy/vim-slime'
+	" Plug 'ervandew/supertab'
+	Plug 'eparreno/vim-l9'
+	Plug 'othree/vim-autocomplpop'
+	Plug 'fatih/vim-go'
+	Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
 
 " config
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
