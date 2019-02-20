@@ -5,8 +5,10 @@ An archive of a few personal dotfiles for easy access.
 ### Dependencies
 
 ```terminal
-OSX/BREW: git cmake tmux stow rlwrap
-LINUX/APTGET: git make tmux stow rlwrap
+# osx:
+brew install git cmake tmux stow rlwrap autojump
+# ubuntu: 
+apt install git make tmux stow rlwrap autojump
 ```
 
 ### Setup
