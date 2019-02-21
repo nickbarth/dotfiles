@@ -1,6 +1,6 @@
 # dotfiles
 
-An archive of a few personal dotfiles for easy access.
+An archive of my personal dotfiles for easy access.
 
 ### Dependencies
 
