@@ -24,7 +24,7 @@ stow -v2 . &> /dev/stdout | grep Skipping | awk '{ print $3 }' | xargs -I{} rm ~
 ### Vim Plugins
 
 ```terminal
-# uses vim plug https://github.com/junegunn/vim-plug
+# uses vim-plug https://github.com/junegunn/vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim . -c':PlugInstall' -c':qa'
