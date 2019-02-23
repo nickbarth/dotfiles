@@ -9,11 +9,5 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
-!/z
-!/z/
-!/z/*
-!/tmux-resurrect
-!/tmux-resurrect/
-!/tmux-resurrect/*
 !DarkWash.itermcolors
 !readme.md
