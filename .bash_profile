@@ -28,6 +28,7 @@ alias ga='git add'
 alias gb='git branch'
 alias gc='git commit --verbose'
 alias gd='git diff --color'
+alias gdc='git diff --color --cached'
 alias gl='git log --color --date=iso --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
 alias gg='git log --color --date=iso --graph  --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
 alias gll='gl --no-merges master..'
@@ -66,6 +67,10 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
+# branch switcher
+# brew install https://raw.githubusercontent.com/nickbarth/branch/master/branch.rb
+alias gbb='branch'
 
 # go lang
 # export GOROOT=/usr/local/opt/go/libexec
