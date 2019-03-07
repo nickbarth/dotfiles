@@ -7,11 +7,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-dispatch'
 	Plug 'tpope/vim-surround'
 	Plug 'jpalardy/vim-slime'
-	" Plug 'ervandew/supertab'
-	Plug 'eparreno/vim-l9'
-	Plug 'othree/vim-autocomplpop'
-	Plug 'fatih/vim-go'
+	Plug 'ajh17/VimCompletesMe'
 	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'airblade/vim-gitgutter'
+	" Plug 'fatih/vim-go'
 call plug#end()
 
 " config
@@ -96,6 +95,7 @@ nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>l :CtrlPBuffer<CR>
 nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>q :q!<CR>
+nnoremap <leader>r :redraw!<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>; :Ack<Space>
@@ -107,6 +107,7 @@ nnoremap <leader>gc :Gcommit -v -q<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <leader>gi :GitGutterToggle<CR>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gg :Ggrep<Space>
@@ -116,8 +117,10 @@ nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
 
-au BufRead,BufNewFile *.hx set filetype=haxe
+" Auto commands
+au BufNewFile,BufRead *.js setl ts=2 softtabstop=2 shiftwidth=2 smarttab expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.py setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.php setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.scss setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.html setfiletype=htmldjango
+au BufNewFile,BufRead *.html setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+" au BufNewFile,BufRead *.html setfiletype=htmldjango
