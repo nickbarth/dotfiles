@@ -118,9 +118,9 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
 
 " Auto commands
-au BufNewFile,BufRead *.js setl ts=2 softtabstop=2 shiftwidth=2 smarttab expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.py setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.php setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.scss setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.html setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-" au BufNewFile,BufRead *.html setfiletype=htmldjango
+au filetype javascript setl ts=2 softtabstop=2 shiftwidth=2 smarttab expandtab autoindent fileformat=unix
+au filetype python setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype php setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype css setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype scss setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype html setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
