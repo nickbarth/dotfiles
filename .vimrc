@@ -25,6 +25,7 @@ set wildignore+=*/bower_components/*,*/vendor/*,*/dist/*,*/storage/*,*/static/*
 " plugins config
 let g:slime_target = "tmux"
 let g:ctrlp_switch_buffer = "t"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 " nmap <c-x><c-e> :SlimeSend1 make<CR>
 
 if executable('ack')
