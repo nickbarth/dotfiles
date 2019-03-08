@@ -4,7 +4,6 @@ filetype plugin indent on
 " plugins
 call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-dispatch'
 	Plug 'tpope/vim-surround'
 	Plug 'jpalardy/vim-slime'
 	Plug 'ajh17/VimCompletesMe'
@@ -112,8 +111,8 @@ nnoremap <leader>gi :GitGutterToggle<CR>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gg :Ggrep<Space>
-nnoremap <leader>gu :Dispatch! git pull --rebase<CR>
-nnoremap <leader>gp :Dispatch! git push<CR>
+nnoremap <leader>gu :! git pull --rebase<CR>
+nnoremap <leader>gp :! git push<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
