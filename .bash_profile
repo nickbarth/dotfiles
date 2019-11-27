@@ -1,34 +1,34 @@
 #!/bin/bash
 
-# Vi Mode Rocks
+# vi rocks
+export EDITOR="vim"
 set editing-mode vi
 set keymap vi
 set -o vi
 
-# Color
-PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
+# color
+export CLICOLOR=1
+export TERM=xterm-256color
 
-# Simple Command Prompt
+# command prompt
+PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
 # PS1="[\u@\h:\w]$ "
 
-# Default Editor
-export EDITOR="vim"
-
-# Nav Commands
-# complete -W "`grep ^Host ~/.ssh/config | awk '{print $2}' | xargs`" ssh
+# nav
 alias -- -='cd -'
 alias x='exit'
 alias ..='cd ..'
 
-# Git Config
+# git config
 git config --global push.default current
 
-# Git Commands
+# git commands
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit --verbose'
 alias gd='git diff --color'
 alias gdc='git diff --color --cached'
+alias gds='git diff --color --staged'
 alias gl='git log --color --date=iso --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
 alias gg='git log --color --date=iso --graph  --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
 alias gll='gl --no-merges master..'
@@ -37,13 +37,16 @@ alias gu='git pull --rebase'
 alias guo='git pull --rebase -u origin master:master'
 alias gm='git merge'
 alias gco='git checkout'
-alias gp='git push'
+alias gp='git pull --rebase && git push'
 alias gpo='git push -u origin master:master'
 alias gr='git reset --hard HEAD; git clean -fd'
 alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
 alias gh='alias | grep git'
-alias upstream='git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`'
+alias upstream='git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD` `git symbolic-ref --short HEAD`'
+
+gfb() { git fetch && git checkout --track -b $1 origin/$1; } # git fetch branch
+gss() { git show HEAD~${1:-0}; } # git show commit
 
 # default params
 alias tmux='tmux -2'
