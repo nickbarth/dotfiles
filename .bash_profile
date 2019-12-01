@@ -86,3 +86,6 @@ alias gbb='branch'
 
 # node
 # export PATH=./node_modules/.bin:$PATH
+
+# brew
+export PATH=/usr/local/sbin:$PATH
