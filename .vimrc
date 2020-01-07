@@ -81,6 +81,11 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 "  <C-c>v - config slime
 "  <C-a>' - check pane #
 "  <C-a>: resize -t 1 -y 10 # set pane height
+let g:slime_command = "make"
+
+function! Slime()
+  let g:slime_command = input('Enter command: ')
+endfunction
 
 " lightline
 let g:lightline = {
@@ -124,7 +129,8 @@ nnoremap <leader>; :Ack<Space>
 nnoremap <leader>p :set invpaste paste?<cr>
 nnoremap <leader>= :retab<cr>
 nnoremap <leader>b :SlimeSend1 make build<CR>
-nnoremap <leader>r :SlimeSend1 go run .<CR>
+nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
+nnoremap <leader>R :call Slime()<CR>
 
 " git commands
 " nmap <leader>ga :Git add %:p<CR><CR>
