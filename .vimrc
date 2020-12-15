@@ -2,6 +2,7 @@
 syntax on                      " syntax highlighting on
 color jellybeans               " best color scheme
 
+" config
 let mapleader = " "            " set spacebar as leader key
 
 set autoindent                 " copy indent from current line when starting a new line
@@ -69,7 +70,12 @@ call plug#begin('~/.vim/plugged')
   " Plug 'fatih/vim-go'
 call plug#end()
 
-" config
+" multi cursors
+function! Multiple_cursors_after()
+  " hack fix
+  exe ':set expandtab'
+  exe ':retab'
+endfunction
 
 " anyfold
 filetype plugin indent on
@@ -131,6 +137,7 @@ nnoremap <leader>= :retab<cr>
 nnoremap <leader>b :SlimeSend1 make build<CR>
 nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
 nnoremap <leader>R :call Slime()<CR>
+vnoremap <leader>C :'<,'>!pbcopy<CR>u
 
 " git commands
 " nmap <leader>ga :Git add %:p<CR><CR>
@@ -150,8 +157,8 @@ nmap <leader>gw :Gwrite<CR><CR>
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
 nmap <leader>gp <Plug>(GitGutterPreviewHunk)<CR>
-nmap <C-m> <Plug>(GitGutterNextHunk)
-nmap <C-,> <Plug>(GitGutterPrevHunk)
+nmap <leader>] <Plug>(GitGutterNextHunk)
+nmap <leader>[ <Plug>(GitGutterPrevHunk)
 
 " defaults
 au BufRead,BufNewFile *.p8 set filetype=lua
