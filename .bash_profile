@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# vi rocks
+# vi mode
 export EDITOR="vim"
 set editing-mode vi
 set keymap vi
@@ -21,6 +21,7 @@ alias ..='cd ..'
 
 # git config
 git config --global push.default current
+git config --global pull.rebase false
 
 # git commands
 alias ga='git add'
@@ -29,21 +30,17 @@ alias gc='git commit --verbose'
 alias gd='git diff --color'
 alias gdc='git diff --color --cached'
 alias gds='git diff --color --staged'
-alias gl='git log --color --date=iso --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
 alias gg='git log --color --date=iso --graph  --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
+alias gl='git log --color --date=iso --pretty=format:"%C(bold red) %cd%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%x08%  %C(reset)%C(bold cyan)%h %C(reset)%C(blue)%s %C(reset)- %an"'
 alias gll='gl --no-merges master..'
 alias glt='gl | grep $(date +%F)'
-alias gu='git pull --rebase'
-alias guo='git pull --rebase -u origin master:master'
 alias gm='git merge'
 alias gco='git checkout'
-alias gp='git pull --rebase && git push'
-alias gpo='git push -u origin master:master'
+alias gp='git push -u'
 alias gr='git reset --hard HEAD; git clean -fd'
 alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
-alias gh='alias | grep git'
-alias upstream='git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD` `git symbolic-ref --short HEAD`'
+alias gu='git pull'
 
 gfb() { git fetch && git checkout --track -b $1 origin/$1; } # git fetch branch
 gss() { git show HEAD~${1:-0}; } # git show commit
@@ -51,6 +48,7 @@ gss() { git show HEAD~${1:-0}; } # git show commit
 # default params
 alias tmux='tmux -2'
 alias ls='ls -G'
+alias dd='date +%Y-%m-%d'
 
 # Bash History
 export HISTCONTROL=ignoredups:erasedups
@@ -60,6 +58,7 @@ shopt -s histappend
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
 alias z='j'
 
 # fzf
@@ -71,9 +70,15 @@ fd() {
   cd "$dir"
 }
 
-# branch switcher
-# brew install https://raw.githubusercontent.com/nickbarth/branch/master/branch.rb
-alias gbb='branch'
+# switch branch
+# apt install fzf | brew install fzf
+gbb() {
+  eval $(echo git checkout "$(git branch --all \
+                 | fzf --height 10 \
+                 | tr -d '[:space:]' \
+                 | tr -d '*' \
+                 | sed 's/remotes\//\-\-track /g')")
+}
 
 # go lang
 # export GOROOT=/usr/local/opt/go/libexec
