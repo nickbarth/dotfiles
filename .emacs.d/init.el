@@ -6,7 +6,7 @@
 (unless package--initialized
   (package-initialize))
 
-;; list of packages to install
+;; package list
 (setq package-selected-packages
       '(
         jbeans-theme
@@ -18,7 +18,7 @@
         rainbow-delimiters
         ))
 
-;; ensure all the packages are installed
+;; ensure installed
 (dolist (package package-selected-packages)
   (unless (package-installed-p package)
     (unless package-archive-contents
