@@ -1,7 +1,5 @@
-;; setup packages and stuff
+;; packages
 (require 'package)
-
-;; add melpa
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 
