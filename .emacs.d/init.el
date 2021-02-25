@@ -14,6 +14,7 @@
         evil-leader
         evil-collection
         ack
+        undo-tree
         mood-line
         rainbow-delimiters
         ))
@@ -52,6 +53,9 @@
 ;; plugins
 (rainbow-delimiters-mode) ;; colored parens
 (mood-line-mode)          ;; statusline
+(global-undo-tree-mode)   ;; evil redo                                                                                                                                                                                       
+
+(setq evil-undo-system 'undo-tree)
 
 ;; evil mode
 (setq evil-want-integration t)
@@ -80,6 +84,6 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (jbeans-theme fzf evil evil-leader evil-collection ack mood-line rainbow-delimiters))))
+    (jbeans-theme fzf evil evil-leader evil-collection ack undo-tree mood-line rainbow-delimiters))))
 
 (load-theme 'jbeans t)
