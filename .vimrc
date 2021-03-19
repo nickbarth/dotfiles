@@ -76,10 +76,6 @@ function! Multiple_cursors_after()
   exe ':retab'
 endfunction
 
-" anyfold
-filetype plugin indent on
-autocmd Filetype * AnyFoldActivate
-
 " vim slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
@@ -104,33 +100,21 @@ let g:lightline = {
       \ },
       \ }
 
-" ctrlp
-let g:ctrlp_switch_buffer = "t"
-set wildignore+=*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*.exe
-set wildignore+=*.png,*.jpg,*.gif,*.eot,*.svg,*.ttf,*.woff,*.dat,*.map,*.min.*
-set wildignore+=*/bower_components/*,*/vendor/*,*/dist/*,*/storage/*,*/static/*
-
-if executable('ack')
-  " ack search eg :Ack --php echo
-  set grepprg=ack\ -s\ -H\ --nogroup\ --nocolor\ --column
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-  command -nargs=+ -complete=file -bar Ack silent! grep! <args>|cwindow|redraw!
-endif
-
 " convenience
 nnoremap <leader><leader> :e#<CR>
 nnoremap <leader>~ :set invnumber<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :Explore<CR>
-nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>f :GFiles<CR>
+nnoremap <leader>i :Commits<CR>
 nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
 nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>l :CtrlPBuffer<CR>
+nnoremap <leader>l :Buffers<CR>
 nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
-nnoremap <leader>; :Ack<Space>
+nnoremap <leader>; :Rg<CR>
 nnoremap <leader>p :set invpaste paste?<cr>
 nnoremap <leader>= :retab<cr>
 nnoremap <leader>b :SlimeSend1 make build<CR>
@@ -156,8 +140,8 @@ nmap <leader>gw :Gwrite<CR><CR>
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
 nmap <leader>gp <Plug>(GitGutterPreviewHunk)<CR>
-nmap <leader>] <Plug>(GitGutterNextHunk)
-nmap <leader>[ <Plug>(GitGutterPrevHunk)
+nmap <C-]> <Plug>(GitGutterNextHunk)
+nmap <C-[> <Plug>(GitGutterPrevHunk)
 
 " defaults
 au BufRead,BufNewFile *.p8 set filetype=lua
