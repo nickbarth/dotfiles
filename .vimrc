@@ -56,19 +56,16 @@ filetype plugin indent on
 
 " plugins
 call plug#begin('~/.vim/plugged')
-  Plug 'nanotech/jellybeans.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
-  Plug 'jpalardy/vim-slime'
-  Plug 'jwalton512/vim-blade'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-surround'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'itchyny/lightline.vim'
-  Plug 'pseewald/vim-anyfold'
-  Plug 'ajh17/VimCompletesMe'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'terryma/vim-multiple-cursors'
   Plug 'airblade/vim-gitgutter'
-  " Plug 'fatih/vim-go'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'jpalardy/vim-slime'
 call plug#end()
 
 " multi cursors
