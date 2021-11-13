@@ -56,6 +56,7 @@ filetype plugin indent on
 
 " plugins
 call plug#begin('~/.vim/plugged')
+  Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-rhubarb'
@@ -67,6 +68,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'jpalardy/vim-slime'
   Plug 'sheerun/vim-polyglot'
+  " Plug 'davidhalter/jedi-vim'
+  Plug 'morhetz/gruvbox'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'jeetsukumaran/vim-pythonsense'
 call plug#end()
 
 " multi cursors
@@ -79,9 +84,6 @@ endfunction
 " vim slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-"  <C-c>v - config slime
-"  <C-a>' - check pane #
-"  <C-a>: resize -t 1 -y 10 # set pane height
 let g:slime_command = "make"
 
 function! Slime()
@@ -116,40 +118,37 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>; :Rg<CR>
 nnoremap <leader>p :set invpaste paste?<cr>
-nnoremap <leader>= :retab<cr>
+nnoremap <leader>= :set expandtab<CR>:retab<cr>
 nnoremap <leader>b :SlimeSend1 make build<CR>
 nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
 nnoremap <leader>R :call Slime()<CR>
 vnoremap <leader>C :'<,'>!pbcopy<CR>u
 
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " git commands
-" nmap <leader>ga :Git add %:p<CR><CR>
-nmap <leader>gb :Git branch<Space>
-nmap <leader>gc :Gcommit -v -q<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>ge :Gedit<CR>
-nmap <leader>gl :silent! Glog<CR>:bot copen<CR>
-nmap <leader>gi :GitGutterToggle<CR>
-nmap <leader>gm :Gmove<Space>
-nmap <leader>go :Git checkout<Space>
-nmap <leader>gg :Ggrep<Space>
-nmap <leader>gpu :!git push<CR>
-nmap <leader>gr :Gread<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gw :Gwrite<CR><CR>
+nmap <leader>gc :Git commit<CR>
+nmap <leader>gd :Gvdiffsplit<CR>
+nmap <leader>gi :0Gclog<CR>
+nmap <leader>gl :Gclog<CR>
+nmap <leader>go :Git browse<CR>
+nmap <leader>gp :!git push<CR>
+nmap <leader>gs :Git<CR>
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
-nmap <leader>gp <Plug>(GitGutterPreviewHunk)<CR>
-nmap <C-]> <Plug>(GitGutterNextHunk)
-nmap <C-[> <Plug>(GitGutterPrevHunk)
+nmap <leader>> <Plug>(GitGutterNextHunk)
+nmap <leader><lt> <Plug>(GitGutterPrevHunk)
 
 " defaults
 au BufRead,BufNewFile *.p8 set filetype=lua
-au filetype json setl ts=2 softtabstop=2 shiftwidth=2 smarttab expandtab autoindent fileformat=unix
+au filetype json       setl ts=2 softtabstop=2 shiftwidth=2 smarttab expandtab autoindent fileformat=unix
 au filetype javascript setl ts=2 softtabstop=2 shiftwidth=2 smarttab expandtab autoindent fileformat=unix
-au filetype python setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au filetype php setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au filetype css setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au filetype scss setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au filetype html setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
-au filetype lua setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype python     setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype php        setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype css        setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype html       setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
+au filetype lua        setl ts=4 softtabstop=4 shiftwidth=4 smarttab expandtab autoindent fileformat=unix
