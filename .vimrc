@@ -56,6 +56,7 @@ filetype plugin indent on
 
 " plugins
 call plug#begin('~/.vim/plugged')
+  Plug 'nanotech/jellybeans.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
