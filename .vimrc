@@ -1,6 +1,5 @@
 " .vimrc
 syntax on                      " syntax highlighting on
-color jellybeans               " best color scheme
 
 " config
 let mapleader = " "            " set spacebar as leader key
@@ -27,7 +26,7 @@ set noerrorbells               " no beeping
 set nohlsearch                 " no search highlighting
 set novisualbell               " no screen flashing
 set nowrap                     " no text wrapping
-set paste                      " no plugin is worth changing this
+" set paste                      " no plugin is worth changing this
 set expandtab                  " expand tabs to spaces
 set path=**                    " recursive path for easier ':find example.ext'
 set nornu                      " hide relative line numbering for easier movement
@@ -56,7 +55,7 @@ filetype plugin indent on
 
 " plugins
 call plug#begin('~/.vim/plugged')
-  Plug 'nanotech/jellybeans.vim'
+  Plug 'nanotech/jellybeans.vim', { 'name': 'jellybeans' }
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
@@ -69,11 +68,21 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'jpalardy/vim-slime'
   Plug 'sheerun/vim-polyglot'
+  " Plug 'github/copilot.vim'
+  " Plug 'shumphrey/fugitive-gitlab.vim'
+  " Plug 'Ivo-Donchev/vim-react-goto-definition'
   " Plug 'davidhalter/jedi-vim'
-  Plug 'morhetz/gruvbox'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'jeetsukumaran/vim-pythonsense'
+  " Plug 'morhetz/gruvbox'
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'jeetsukumaran/vim-pythonsense'
+  " Plug 'dracula/vim', { 'name': 'dracula' }
 call plug#end()
+
+" fzf
+let g:fzf_history_dir = '~/.vim/fzf-history'
+
+" copilot
+let g:copilot_node_command = '/Users/nickbar/.nvm/versions/node/v17.9.1/bin/node'
 
 " multi cursors
 function! Multiple_cursors_after()
@@ -106,23 +115,26 @@ let g:lightline = {
 " convenience
 nnoremap <leader><leader> :e#<CR>
 nnoremap <leader>~ :set invnumber<CR>
+nnoremap <leader>; :Rg<CR>
+nnoremap <leader>= :set expandtab<CR>:retab<cr>
+nnoremap <leader>I :Commits<CR>
+nnoremap <leader>L :GFiles?<CR>
+nnoremap <leader>R :call Slime()<CR>
+nnoremap <leader>b :SlimeSend1 make build<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>e :Explore<CR>
 nnoremap <leader>f :GFiles<CR>
-nnoremap <leader>i :Commits<CR>
-nnoremap <leader>j :bp<CR>:echo bufnr('%') expand('%:p')<CR>
-nnoremap <leader>k :bn<CR>:echo bufnr('%') expand('%:p')<CR>
+nnoremap <leader>i :BCommits<CR>
+nnoremap <leader>j :bn<CR>
+nnoremap <leader>k :bp<CR>
 nnoremap <leader>l :Buffers<CR>
-nnoremap <leader>t :tabe %<CR>
+nnoremap <leader>p :set invpaste paste?<cr>
 nnoremap <leader>q :q!<CR>
+nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
+nnoremap <leader>s :Lines<CR>
+nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
-nnoremap <leader>; :Rg<CR>
-nnoremap <leader>p :set invpaste paste?<cr>
-nnoremap <leader>= :set expandtab<CR>:retab<cr>
-nnoremap <leader>b :SlimeSend1 make build<CR>
-nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
-nnoremap <leader>R :call Slime()<CR>
 vnoremap <leader>C :'<,'>!pbcopy<CR>u
 
 " GoTo code navigation.
@@ -130,19 +142,20 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :call ReactGotoDef()<CR>
 
 " git commands
-nmap <leader>gc :Git commit<CR>
+nmap <leader>gs :tab Git<CR>
+nmap <leader>gc :!git commit<CR>
 nmap <leader>gd :Gvdiffsplit<CR>
 nmap <leader>gi :0Gclog<CR>
 nmap <leader>gl :Gclog<CR>
 nmap <leader>go :Git browse<CR>
 nmap <leader>gp :!git push<CR>
-nmap <leader>gs :Git<CR>
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
-nmap <leader>> <Plug>(GitGutterNextHunk)
-nmap <leader><lt> <Plug>(GitGutterPrevHunk)
+nmap ]] <Plug>(GitGutterNextHunk)
+nmap [[ <Plug>(GitGutterPrevHunk)
 
 " defaults
 au BufRead,BufNewFile *.p8 set filetype=lua
