@@ -20,6 +20,12 @@ stow -v2 .
 # stow -D . 
 ```
 
+### Git
+
+```terminal
+git config --global core.excludesfile ~/.gitignore
+```
+
 ### Vim Plugins
 
 ```terminal
