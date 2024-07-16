@@ -27,7 +27,6 @@ set noerrorbells               " no beeping
 set nohlsearch                 " no search highlighting
 set novisualbell               " no screen flashing
 set nowrap                     " no text wrapping
-" set paste                      " no plugin is worth changing this
 set expandtab                  " expand tabs to spaces
 set path=**                    " recursive path for easier ':find example.ext'
 set nornu                      " hide relative line numbering for easier movement
@@ -50,6 +49,9 @@ set nostartofline              " don't to start of line on buffer switch
 set t_Co=256                   " iterm2 terminal colors
 set t_BE=                      " vim-multiple-cursor
 set tags=tags                  " look for ctags in source directory
+set scrolloff=0                " no scroll offset
+" set regexpengine=1           " regex engine sometimes needed for plugins
+" set paste                    " no plugin is worth changing this
 
 set nocompatible
 filetype plugin indent on
@@ -109,13 +111,25 @@ function! PipeToPbcopy()
     endif
     redraw!
 endfunction
+command! -nargs=0 PipeToPbcopy call PipeToPbcopy()
 
-" multi cursors
-function! Multiple_cursors_after()
-  " hack fix
+function! FzfGitStatus()
+  let files = systemlist("git status --short | awk '{print $2}' | grep -v '\/$'")
+  call fzf#run(fzf#wrap({
+  \ 'source': files,
+  \ 'sink':   'e',
+  \ 'options': '--multi --preview "git diff --color -- {} && bat --color=always {} | head -20"'
+  \ }))
+endfunction
+command! -nargs=0 FzfGitStatus call FzfGitStatus()
+
+" multi cursors reset
+function! MultiCursorsFix()
   exe ':set expandtab'
   exe ':retab'
+  redraw!
 endfunction
+command! -nargs=0 MultiCursorsFix call MultiCursorsFix()
 
 " vim slime
 let g:slime_target = "tmux"
@@ -148,7 +162,6 @@ nnoremap <leader>L :GFiles?<CR>
 nnoremap <leader>R :call Slime()<CR>
 nnoremap <leader>b :SlimeSend1 make build<CR>
 nnoremap <leader>d :bd<CR>
-" nnoremap <leader>e :Files %:p:h<CR>
 nnoremap <leader>e :Explore<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>i :BCommits<CR>
@@ -163,7 +176,7 @@ nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
 vnoremap <leader>C :'<,'>!pbcopy<CR>u
-nnoremap <leader>P :call PipeToPbcopy()<CR>
+nnoremap <leader>P :PipeToPbcopy<CR>
 nnoremap <leader>a :Rg <C-R><C-W><CR>
 
 " copy paste
@@ -185,17 +198,17 @@ nmap <silent> ar <Plug>(coc-references)
 nmap <silent> ay <Plug>(coc-type-definition)
 
 " git commands
-nmap <leader>gs :Git<CR>
-" also returns from gclog
+nmap <leader>gs :FzfGitStatus<CR>
 nmap <leader>ge :Gedit<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gc :!git commit<CR>
 nmap <leader>gd :Gvdiffsplit<CR>
+" :Git -- to returns from :0Gclog
 nmap <leader>gl :0Gclog<CR>
 nmap <leader>gi :0Gclog<CR>
 nmap <leader>go :Git browse<CR>
 nmap <leader>gp :!git push<CR>
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
-nmap ]] <Plug>(GitGutterNextHunk)
-nmap [[ <Plug>(GitGutterPrevHunk)
+nmap <leader>] <Plug>(GitGutterNextHunk)
+nmap <leader>[ <Plug>(GitGutterPrevHunk)
