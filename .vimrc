@@ -1,6 +1,5 @@
 " .vimrc
 syntax on                      " enable syntax highlighting
-colorscheme jellybeans         " enable the best color scheme
 
 " General Configuration
 let mapleader = " "            " set spacebar as leader key
@@ -64,7 +63,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-sleuth'                                 " Automatically adjusts `shiftwidth` and `expandtab` based on file
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fuzzy finder for Vim
   Plug 'junegunn/fzf.vim'                                 " fuzzier fuzzy finding
-  Plug 'itchyny/lightline.vim'                            " status line plugin
   Plug 'airblade/vim-gitgutter'                           " Shows a Git diff in the gutter (sign column) of Vim
   Plug 'terryma/vim-multiple-cursors'                     " multiple cursors for Vim
   Plug 'jpalardy/vim-slime'                               " Send text from Vim to a REPL
@@ -76,6 +74,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " plugin config
+colorscheme jellybeans " enable the best color scheme
 
 " - fzf
 let g:fzf_history_dir = '~/.vim/fzf-history'
