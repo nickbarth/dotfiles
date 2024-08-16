@@ -1,169 +1,147 @@
 " .vimrc
-syntax on                      " syntax highlighting on
+syntax on                      " enable syntax highlighting
+colorscheme jellybeans         " enable the best color scheme
 
-" config
+" General Configuration
 let mapleader = " "            " set spacebar as leader key
 
-set regexpengine=0             " use vim regex engine
-set autoindent                 " copy indent from current line when starting a new line
-set backspace=2                " two character automatic placement after <
-set copyindent                 " copy the previous indentation on autoindenting
-set cindent                    " c style indenting rules
-set complete=.,b,u,]           " auto complete from current buff, loaded buffs, unloaded buffs, and tags
-set directory=/tmp/            " hide backups away in the tmp directory
-set nowritebackup              " no backup file while editing
-set noswapfile                 " no swap files
-set nobackup                   " no backup files
-set foldlevelstart=99          " unfold all code folding
-set foldnestmax=2              " easy zj / zk between methods
-set ignorecase                 " ignore case while searching
-set incsearch                  " search a word as its typed
-set iskeyword+=-               " dashes as part of words
-set laststatus=2               " lightLine bar
-set lisp                       " auto complete words with dashes
-set list                       " show whitespace
-set listchars=tab:..,trail:.   " show whitespace as periods
-set noerrorbells               " no beeping
-set nohlsearch                 " no search highlighting
-set novisualbell               " no screen flashing
-set nowrap                     " no text wrapping
-set nopaste                    " no pasting mode for space indents and plugins
-set expandtab                  " expand tabs to spaces
-set path=**                    " recursive path for easier ':find example.txt'
-set nornu                      " hide relative line numbering for easier movement
-set nonu                       " hide current line number
-set ruler                      " show the current row and column at the bottom right of the screen
-set shiftwidth=2               " two spaces inserted for indentation
-set shortmess+=I               " no startup screen
-set showmatch                  " show matching bracket or parenthesis
-set smartcase                  " case sensitive search when case is used
-set smarttab                   " insert tab space on new line
-set nospell                    " spell check off by default
-set tabstop=2                  " tabs are 2 spaces
-set wildmode=longest,list      " longest then list completion mode
-set virtualedit=               " no virtual spaces for ascii art
-set lazyredraw                 " no redundant redraws
-set showtabline=0              " more space
-set hidden                     " don't ask to save
-set notimeout                  " no leader key timeout
-set nostartofline              " don't to start of line on buffer switch
-set t_Co=256                   " iterm2 terminal colors
-set t_BE=                      " vim-multiple-cursor
-set tags=tags                  " look for ctags in source directory
-set scrolloff=0                " no view scroll offset
+set regexpengine=0             " use vim's regex engine
+set autoindent                 " auto-indent new lines based on the current line
+set copyindent                 " copy previous indentation for auto-indenting
+set cindent                    " apply c-style indentation rules
+set complete=.,b,u             " autocomplete from current buffer, loaded/unloaded buffers
+set directory=/tmp/            " store swap files in /tmp/ directory
+set nowritebackup              " disable backup files during editing
+set noswapfile                 " disable swap files
+set nobackup                   " disable backup files
+set foldlevelstart=99          " unfold all code by default
+set foldnestmax=2              " allow folding up to 2 levels deep
+set ignorecase                 " ignore case in searches
+set incsearch                  " incremental search (search as you type)
+set iskeyword+=-               " treat dashes as part of words
+set laststatus=2               " always show the status line
+set list                       " display whitespace characters
+set listchars=tab:..,trail:.   " show tabs and trailing spaces as periods
+set noerrorbells               " disable beeping
+set nohlsearch                 " disable search highlighting
+set novisualbell               " disable screen flashing
+set nowrap                     " disable line wrapping
+set expandtab                  " convert tabs to spaces
+set path=**                    " enable recursive path searching with :find
+set nornu                      " disable relative line numbering
+set nonu                       " disable absolute line numbering
+set ruler                      " show row and column in the status line
+set shiftwidth=2               " use 2 spaces for indentation
+set shortmess+=I               " skip the startup message
+set showmatch                  " highlight matching brackets and parentheses
+set smartcase                  " enable case-sensitive search when uppercase letters are used
+set smarttab                   " adjust tab spaces on new lines
+set nospell                    " disable spell check by default
+set tabstop=2                  " set tab width to 2 spaces
+set wildmode=longest,list      " command-line completion mode
+set virtualedit=               " disable virtual editing (no cursor beyond the end of the line)
+set lazyredraw                 " redraw only when necessary
+set showtabline=0              " hide the tab line for more space
+set hidden                     " allow buffer switching without saving
+set notimeout                  " disable timeout for leader key sequences
+set nostartofline              " retain cursor position on buffer switch
+set t_Co=256                   " enable 256-color support in the terminal
+set t_BE=                      " fix for vim-multiple-cursor
+set tags=tags                  " look for ctags in the current directory
+set scrolloff=0                " no vertical scroll offset
 
-set nocompatible
-filetype plugin indent on
+set nocompatible               " disable vi compatibility
+filetype plugin indent on      " enable filetype-specific plugins and indentation
 
 " plugins
 call plug#begin('~/.vim/plugged')
-  Plug 'nanotech/jellybeans.vim', { 'name': 'jellybeans' }
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-rhubarb'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-sleuth'
-  " Plug 'tpope/vim-rails'
-  " Plug 'tpope/vim-rake'
-  " Plug 'tpope/vim-bundler'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'itchyny/lightline.vim'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'terryma/vim-multiple-cursors'
-  Plug 'jpalardy/vim-slime'
-  Plug 'sheerun/vim-polyglot'
-  " Plug 'github/copilot.vim'
-  Plug 'prettier/vim-prettier', {
-    \ 'do': 'yarn install --frozen-lockfile --production',
-    \ 'for': ['javascript', 'typescript', 'php', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'nanotech/jellybeans.vim'                          " A colorful, high-contrast color scheme
+  Plug 'tpope/vim-commentary'                             " comment out code with `gcc` and `gc`
+  Plug 'tpope/vim-fugitive'                               " Git in Vim
+  Plug 'tpope/vim-repeat'                                 " repeating more with the `.` command
+  Plug 'tpope/vim-rhubarb'                                " `:Gbrowse` files on Github
+  Plug 'tpope/vim-surround'                               " change surrounding characters (like quotes, parentheses)
+  Plug 'tpope/vim-sleuth'                                 " Automatically adjusts `shiftwidth` and `expandtab` based on file
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " fuzzy finder for Vim
+  Plug 'junegunn/fzf.vim'                                 " fuzzier fuzzy finding
+  Plug 'itchyny/lightline.vim'                            " status line plugin
+  Plug 'airblade/vim-gitgutter'                           " Shows a Git diff in the gutter (sign column) of Vim
+  Plug 'terryma/vim-multiple-cursors'                     " multiple cursors for Vim
+  Plug 'jpalardy/vim-slime'                               " Send text from Vim to a REPL
+  Plug 'sheerun/vim-polyglot'                             " language packs for syntax highlighting
+
+  " Plug 'prettier/vim-prettier', { 'do': 'yarn install --production' } " Format code
+  " Plug 'github/copilot.vim'                                           " Generate Code
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}                     " LSP Complete Code
 call plug#end()
 
 " plugin config
-colorscheme jellybeans
-" autocmd BufWritePost * PrettierAsync
 
-" fzf
+" - fzf
 let g:fzf_history_dir = '~/.vim/fzf-history'
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --line-number --no-heading --color=always".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-" vim slime
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-let g:slime_command = "make"
-
+" - slime
 function! SlimeCMD()
   let g:slime_command = input('Enter command: ')
 endfunction
 
-" lightline
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode' ],
-      \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+let g:slime_target = "tmux"
+let g:slime_command = "make"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
+" - prettier
+" autocmd BufWritePost * PrettierAsync
 
 " convenience
-nnoremap <leader><leader> :e#<CR>
-nnoremap <leader>~ :set invnumber<CR>
-nnoremap <leader>` :set invpaste paste?<cr>
-nnoremap <leader>= :set expandtab<CR>:retab<cr>
-nnoremap <leader>a :Rg <C-R><C-W><CR>
-nnoremap <leader>; :Rg<CR>
-nnoremap <leader>e :Explore<CR>
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>i :BCommits<CR>
-nnoremap <leader>l :Buffers<CR>
-nnoremap <leader>d :bd<CR>
-nnoremap <leader>j :bn<CR>
-nnoremap <leader>k :bp<CR>
-nnoremap <leader>p :Prettier<cr>
-nnoremap <leader>q :q!<CR>
-nnoremap <leader>R :call SlimeCMD()<CR>
-nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
-nnoremap <leader>/ :Lines<CR>
-nnoremap <leader>t :tabe %<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>x :x<CR>
+nn <leader><leader> :e#<CR>          " switch to the previously edited buffer
+nn <leader>~ :set invnumber<CR>      " toggle line numbers
+nn <leader>a :Rg <C-R><C-W><CR>      " search for the word under the cursor using ripgrep
+nn <leader>; :Rg<CR>                 " open ripgrep search prompt
+nn <leader>e :Explore<CR>            " open file explorer
+nn <leader>f :Files<CR>              " open file finder
+nn <leader>i :BCommits<CR>           " show buffer commits
+nn <leader>l :Buffers<CR>            " list open buffers
+nn <leader>d :bd<CR>                 " close current buffer
+nn <leader>j :bn<CR>                 " switch to next buffer
+nn <leader>k :bp<CR>                 " switch to previous buffer
+nn <leader>p :set invpaste paste?<cr>" toggle paste mode
+nn <leader>P :Prettier<cr>           " format code with prettier
+nn <leader>q :q!<CR>                 " quit without saving
+nn <leader>R :call SlimeCMD()<CR>    " execute a custom slime command
+nn <leader>/ :Lines<CR>              " open fuzzy search for lines in the current buffer
+nn <leader>t :tabe %<CR>             " open the current file in a new tab
+nn <leader>w :w<CR>                  " save the current buffer
+nn <leader>x :x<CR>                  " save and close the current buffer
+nn <leader>> :cn<CR>                 " jump to the next item in the quickfix list
+nn <leader>< :cp<CR>                 " jump to the previous item in the quickfix list
 
-" copy / paste
-nnoremap YY :<C-u>execute "normal! ggyG"<CR>:call system('pbcopy', @")<CR>
-nnoremap PP "+p
-nnoremap GP ggVGd"+p
+nn <leader>= :set expandtab<CR>:retab<cr>                 " convert tabs to spaces and reformat existing lines
+nn <leader>r :call slime#send(g:slime_command . "\r")<CR> " send a command to the slime repl
 
-" rails
-" nnoremap ,m :Emodel<CR>
-" nnoremap ,v :Eview<CR>
-" nnoremap ,c :Econtroller<CR>
-" nnoremap ,r :Rake<CR>
+" copy & paste
+nn YY :<C-u>execute "normal! ggyG"<CR>:call system('pbcopy', @")<CR> " copy entire buffer
+nn PP "+p                                                            " paste from clipboard
+nn GP ggVGd"+p                                                       " replace buffer with clipboard
 
-" code navigation
-nmap <silent> ad <Plug>(coc-definition)
-nmap <silent> ai <Plug>(coc-implementation)
-nmap <silent> ar <Plug>(coc-references)
-nmap <silent> ay <Plug>(coc-type-definition)
-nmap <leader>> :cn<CR>
-nmap <leader>< :cp<CR>
+" conquer of completion
+nn <silent> ad <Plug>(coc-definition)      " goto definition
+nn <silent> ai <Plug>(coc-implementation)  " goto implementation
+nn <silent> ar <Plug>(coc-references)      " find references
+nn <silent> ay <Plug>(coc-type-definition) " goto type definition
 
-" git commands
-nmap <leader>gi :Git<CR>
-nmap <leader>gs :GFiles?<CR>
-nmap <leader>gc :Git commit<CR>
-nmap <leader>ge :Gedit<CR>
-nmap <leader>gr :Gread<CR>
-nmap <leader>gw :Gwrite<CR>
-nmap <leader>gd :Gvdiffsplit<CR>
-nmap <leader>gl :0Gclog<CR>
-nmap <leader>go :Git browse<CR>
-nmap <leader>gp :Git push<CR>
-nmap <leader>ga <Plug>(GitGutterStageHunk)
-nmap <leader>gu <Plug>(GitGutterUndoHunk)
-nmap <leader>] :GitGutterNextHunk<CR>
-nmap <leader>[ :GitGutterPrevHunk<CR>
+" Git Commands
+nn <leader>gi :Git<CR>                   " open git status
+nn <leader>gs :GFiles?<CR>               " open fuzzy search for git files
+nn <leader>gc :Git commit<CR>            " commit changes
+nn <leader>ge :Gedit<CR>                 " edit a file from the git index
+nn <leader>gr :Gread<CR>                 " read file from the git index
+nn <leader>gw :Gwrite<CR>                " write buffer to the git index
+nn <leader>gd :Gvdiffsplit<CR>           " open a git diff in a vertical split
+nn <leader>gl :0Gclog<CR>                " show the git log for the current file
+nn <leader>go :Git browse<CR>            " open the file in github
+nn <leader>gp :Git push<CR>              " push commits to the remote repository
+nn <leader>ga <Plug>(GitGutterStageHunk) " stage the current hunk
+nn <leader>gu <Plug>(GitGutterUndoHunk)  " undo the last staged hunk
+nn <leader>] :GitGutterNextHunk<CR>      " jump to the next git hunk
+nn <leader>[ :GitGutterPrevHunk<CR>      " jump to the previous git hunk
