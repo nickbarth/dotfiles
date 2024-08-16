@@ -74,7 +74,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'jpalardy/vim-slime'
   Plug 'sheerun/vim-polyglot'
-  Plug 'github/copilot.vim'
+  " Plug 'github/copilot.vim'
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install --frozen-lockfile --production',
     \ 'for': ['javascript', 'typescript', 'php', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
