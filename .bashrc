@@ -14,11 +14,6 @@ export TERM=xterm-256color
 PS1="[\e[1;34m\u@\h:\e[0m\e[1;31m\W\e[0m]$ "
 # PS1="[\u@\h:\w]$ "
 
-# nav
-alias -- -='cd -'
-alias x='exit'
-alias ..='cd ..'
-
 # git config
 git config --global push.default current
 git config --global pull.rebase false
@@ -42,15 +37,13 @@ alias gs='git status -sb'
 alias gt='git ls-tree master -r --name-only .'
 alias gu='git pull'
 
-gfb() { git fetch && git checkout --track -b $1 origin/$1; } # git fetch branch
-gss() { git show HEAD~${1:-0}; } # git show commit
-
-# default params
+# convenience
 alias tmux='tmux -2'
 alias ls='ls -G'
 alias dd='date +%Y-%m-%d'
+alias x='exit'
 
-# Bash History
+# history
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
@@ -71,7 +64,6 @@ fd() {
 }
 
 # switch branch
-# apt install fzf | brew install fzf
 gbb() {
   eval $(echo git checkout "$(git branch --all \
                  | fzf --height 10 \
@@ -79,18 +71,6 @@ gbb() {
                  | tr -d '*' \
                  | sed 's/remotes\//\-\-track /g')")
 }
-
-# go lang
-# export GOROOT=/usr/local/opt/go/libexec
-# export GOPATH=$HOME/.go
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-# python virtualenv
-# export WORKON_HOME=~/virtualenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-
-# node
-# export PATH=./node_modules/.bin:$PATH
 
 # brew
 export PATH=/usr/local/sbin:$PATH
