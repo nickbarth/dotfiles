@@ -27,8 +27,9 @@ set noerrorbells               " no beeping
 set nohlsearch                 " no search highlighting
 set novisualbell               " no screen flashing
 set nowrap                     " no text wrapping
+set nopaste                    " no pasting mode for space indents and plugins
 set expandtab                  " expand tabs to spaces
-set path=**                    " recursive path for easier ':find example.ext'
+set path=**                    " recursive path for easier ':find example.txt'
 set nornu                      " hide relative line numbering for easier movement
 set nonu                       " hide current line number
 set ruler                      " show the current row and column at the bottom right of the screen
@@ -41,7 +42,7 @@ set nospell                    " spell check off by default
 set tabstop=2                  " tabs are 2 spaces
 set wildmode=longest,list      " longest then list completion mode
 set virtualedit=               " no virtual spaces for ascii art
-set lazyredraw                 " don't redraw when don't have to
+set lazyredraw                 " no redundant redraws
 set showtabline=0              " more space
 set hidden                     " don't ask to save
 set notimeout                  " no leader key timeout
@@ -49,9 +50,7 @@ set nostartofline              " don't to start of line on buffer switch
 set t_Co=256                   " iterm2 terminal colors
 set t_BE=                      " vim-multiple-cursor
 set tags=tags                  " look for ctags in source directory
-set scrolloff=0                " no scroll offset
-" set regexpengine=1           " regex engine sometimes needed for plugins
-" set paste                    " no plugin is worth changing this
+set scrolloff=0                " no view scroll offset
 
 set nocompatible
 filetype plugin indent on
@@ -65,6 +64,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-sleuth'
+  " Plug 'tpope/vim-rails'
+  " Plug 'tpope/vim-rake'
+  " Plug 'tpope/vim-bundler'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'itchyny/lightline.vim'
@@ -75,68 +77,24 @@ call plug#begin('~/.vim/plugged')
   Plug 'github/copilot.vim'
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install --frozen-lockfile --production',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-  " Plug 'shumphrey/fugitive-gitlab.vim'
-  " Plug 'Ivo-Donchev/vim-react-goto-definition'
-  " Plug 'davidhalter/jedi-vim'
-  " Plug 'morhetz/gruvbox'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " Plug 'jeetsukumaran/vim-pythonsense'
-  " Plug 'dracula/vim', { 'name': 'dracula' }
-  " Plug 'leafgarland/typescript-vim'
-  " Plug 'yuezk/vim-js'
-  " Plug 'maxmellon/vim-jsx-pretty'
-  " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-   Plug 'tpope/vim-rails'
-   Plug 'tpope/vim-bundler'
-   Plug 'tpope/vim-rake'
+    \ 'for': ['javascript', 'typescript', 'php', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-" fzf
-let g:fzf_history_dir = '~/.vim/fzf-history'
-
-" copilot
+" plugin config
 colorscheme jellybeans
 " autocmd BufWritePost * PrettierAsync
 
-function! PipeToPbcopy()
-    " Get the current file path
-    let l:file_path = expand('%:p')
-
-    " Pipe the entire file to pbcopy using cat
-    if has('macunix')
-        silent! execute '!cat ' . l:file_path . ' | pbcopy'
-    elseif has('unix')
-        silent! execute '!cat ' . l:file_path . ' | xclip -selection clipboard'
-    endif
-    redraw!
-endfunction
-command! -nargs=0 PipeToPbcopy call PipeToPbcopy()
-
-function! FzfGitStatus()
-  let files = systemlist("git status --short | awk '{print $2}' | grep -v '\/$'")
-  call fzf#run(fzf#wrap({
-  \ 'source': files,
-  \ 'sink':   'e',
-  \ 'options': '--multi --preview "git diff --color -- {} && bat --color=always {} | head -20"'
-  \ }))
-endfunction
-command! -nargs=0 FzfGitStatus call FzfGitStatus()
-
-" multi cursors reset
-function! MultiCursorsFix()
-  exe ':set expandtab'
-  exe ':retab'
-  redraw!
-endfunction
-command! -nargs=0 MultiCursorsFix call MultiCursorsFix()
+" fzf
+let g:fzf_history_dir = '~/.vim/fzf-history'
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " vim slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_command = "make"
 
-function! Slime()
+function! SlimeCMD()
   let g:slime_command = input('Enter command: ')
 endfunction
 
@@ -155,60 +113,57 @@ let g:lightline = {
 " convenience
 nnoremap <leader><leader> :e#<CR>
 nnoremap <leader>~ :set invnumber<CR>
-nnoremap <leader>; :Rg<CR>
+nnoremap <leader>` :set invpaste paste?<cr>
 nnoremap <leader>= :set expandtab<CR>:retab<cr>
-nnoremap <leader>I :Commits<CR>
-nnoremap <leader>L :GFiles?<CR>
-nnoremap <leader>R :call Slime()<CR>
-nnoremap <leader>b :SlimeSend1 make build<CR>
-nnoremap <leader>d :bd<CR>
+nnoremap <leader>a :Rg <C-R><C-W><CR>
+nnoremap <leader>; :Rg<CR>
 nnoremap <leader>e :Explore<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>i :BCommits<CR>
+nnoremap <leader>l :Buffers<CR>
+nnoremap <leader>d :bd<CR>
 nnoremap <leader>j :bn<CR>
 nnoremap <leader>k :bp<CR>
-nnoremap <leader>l :Buffers<CR>
-nnoremap <leader>p :set invpaste paste?<cr>
+nnoremap <leader>p :Prettier<cr>
 nnoremap <leader>q :q!<CR>
+nnoremap <leader>R :call SlimeCMD()<CR>
 nnoremap <leader>r :call slime#send(g:slime_command . "\r")<CR>
 nnoremap <leader>/ :Lines<CR>
 nnoremap <leader>t :tabe %<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
-vnoremap <leader>C :'<,'>!pbcopy<CR>u
-nnoremap <leader>P :PipeToPbcopy<CR>
-nnoremap <leader>a :Rg <C-R><C-W><CR>
 
-" copy paste
+" copy / paste
 nnoremap YY :<C-u>execute "normal! ggyG"<CR>:call system('pbcopy', @")<CR>
 nnoremap PP "+p
 nnoremap GP ggVGd"+p
 
-" Rails
-nnoremap ,m :Emodel<CR>
-nnoremap ,v :Eview<CR>
-nnoremap ,c :Econtroller<CR>
-nnoremap ,t :A<CR>
-nnoremap ,T :Rake<CR>
+" rails
+" nnoremap ,m :Emodel<CR>
+" nnoremap ,v :Eview<CR>
+" nnoremap ,c :Econtroller<CR>
+" nnoremap ,r :Rake<CR>
 
-" GoTo code navigation.
+" code navigation
 nmap <silent> ad <Plug>(coc-definition)
 nmap <silent> ai <Plug>(coc-implementation)
 nmap <silent> ar <Plug>(coc-references)
 nmap <silent> ay <Plug>(coc-type-definition)
+nmap <leader>> :cn<CR>
+nmap <leader>< :cp<CR>
 
 " git commands
-nmap <leader>gs :FzfGitStatus<CR>
+nmap <leader>gi :Git<CR>
+nmap <leader>gs :GFiles?<CR>
+nmap <leader>gc :Git commit<CR>
 nmap <leader>ge :Gedit<CR>
+nmap <leader>gr :Gread<CR>
 nmap <leader>gw :Gwrite<CR>
-nmap <leader>gc :!git commit<CR>
 nmap <leader>gd :Gvdiffsplit<CR>
-" :Git -- to returns from :0Gclog
 nmap <leader>gl :0Gclog<CR>
-nmap <leader>gi :0Gclog<CR>
 nmap <leader>go :Git browse<CR>
-nmap <leader>gp :!git push<CR>
+nmap <leader>gp :Git push<CR>
 nmap <leader>ga <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
-nmap <leader>] <Plug>(GitGutterNextHunk)
-nmap <leader>[ <Plug>(GitGutterPrevHunk)
+nmap <leader>] :GitGutterNextHunk<CR>
+nmap <leader>[ :GitGutterPrevHunk<CR>
