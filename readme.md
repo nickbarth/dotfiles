@@ -11,15 +11,6 @@ brew install git cmake tmux stow rlwrap autojump ack ripgrep bat
 apt install git make tmux stow rlwrap autojump ack ripgrep bat
 ```
 
-### Setup
-
-```terminal
-git clone git@github.com:nickbarth/dotfiles.git && cd dotfiles
-stow -v2 .
-# clear
-# stow -D . 
-```
-
 ### Git
 
 ```terminal
