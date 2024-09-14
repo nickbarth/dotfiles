@@ -93,54 +93,54 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 " autocmd BufWritePost * PrettierAsync
 
 " convenience
-nn <leader><leader> :e#<CR>          " switch to the previously edited buffer
-nn <leader>~ :set invnumber<CR>      " toggle line numbers
-nn <leader>a :Rg <C-R><C-W><CR>      " search for the word under the cursor using ripgrep
-nn <leader>; :Rg<CR>                 " open ripgrep search prompt
-nn <leader>e :Explore<CR>            " open file explorer
-nn <leader>f :Files<CR>              " open file finder
-nn <leader>i :BCommits<CR>           " show buffer commits
-nn <leader>l :Buffers<CR>            " list open buffers
-nn <leader>d :bd<CR>                 " close current buffer
-nn <leader>j :bn<CR>                 " switch to next buffer
-nn <leader>k :bp<CR>                 " switch to previous buffer
-nn <leader>p :set invpaste paste?<cr>" toggle paste mode
-nn <leader>P :Prettier<cr>           " format code with prettier
-nn <leader>q :q!<CR>                 " quit without saving
-nn <leader>R :call SlimeCMD()<CR>    " execute a custom slime command
-nn <leader>/ :Lines<CR>              " open fuzzy search for lines in the current buffer
-nn <leader>t :tabe %<CR>             " open the current file in a new tab
-nn <leader>w :w<CR>                  " save the current buffer
-nn <leader>x :x<CR>                  " save and close the current buffer
-nn <leader>> :cn<CR>                 " jump to the next item in the quickfix list
-nn <leader>< :cp<CR>                 " jump to the previous item in the quickfix list
+nn <leader><leader> :e#<CR>
+nn <leader>~ :set invnumber<CR>
+nn <leader>a :Rg <C-R><C-W><CR>
+nn <leader>; :Rg<CR>
+nn <leader>e :Explore<CR>
+nn <leader>f :Files<CR>
+nn <leader>i :BCommits<CR>
+nn <leader>l :Buffers<CR>
+nn <leader>d :bd<CR>
+nn <leader>j :bn<CR>
+nn <leader>k :bp<CR>
+nn <leader>p :set invpaste paste?<cr>
+nn <leader>P :Prettier<cr>
+nn <leader>q :q!<CR>
+nn <leader>R :call SlimeCMD()<CR>
+nn <leader>/ :Lines<CR>
+nn <leader>t :tabe %<CR>
+nn <leader>w :w<CR>
+nn <leader>x :x<CR>
+nn <leader>> :cn<CR>
+nn <leader>< :cp<CR>
 
-nn <leader>= :set expandtab<CR>:retab<cr>                 " convert tabs to spaces and reformat existing lines
-nn <leader>r :call slime#send(g:slime_command . "\r")<CR> " send a command to the slime repl
+nn <leader>= :set expandtab<CR>:retab<cr>
+nn <leader>r :call slime#send(g:slime_command . "\r")<CR>
 
 " copy & paste
-nn YY :<C-u>execute "normal! ggyG"<CR>:call system('pbcopy', @")<CR> " copy entire buffer
-nn PP "+p                                                            " paste from clipboard
-nn GP ggVGd"+p                                                       " replace buffer with clipboard
+nn YY :<C-u>execute "normal! ggyG"<CR>:call system('pbcopy', @")<CR>
+nn PP "+p
+nn GP ggVGd"+p
 
 " conquer of completion
-nn <silent> ad <Plug>(coc-definition)      " goto definition
-nn <silent> ai <Plug>(coc-implementation)  " goto implementation
-nn <silent> ar <Plug>(coc-references)      " find references
-nn <silent> ay <Plug>(coc-type-definition) " goto type definition
+nn <silent> ad <Plug>(coc-definition)
+nn <silent> ai <Plug>(coc-implementation)
+nn <silent> ar <Plug>(coc-references)
+nn <silent> ay <Plug>(coc-type-definition)
 
 " Git Commands
-nn <leader>gi :Git<CR>                   " open git status
-nn <leader>gs :GFiles?<CR>               " open fuzzy search for git files
-nn <leader>gc :Git commit<CR>            " commit changes
-nn <leader>ge :Gedit<CR>                 " edit a file from the git index
-nn <leader>gr :Gread<CR>                 " read file from the git index
-nn <leader>gw :Gwrite<CR>                " write buffer to the git index
-nn <leader>gd :Gvdiffsplit<CR>           " open a git diff in a vertical split
-nn <leader>gl :0Gclog<CR>                " show the git log for the current file
-nn <leader>go :Git browse<CR>            " open the file in github
-nn <leader>gp :Git push<CR>              " push commits to the remote repository
-nn <leader>ga <Plug>(GitGutterStageHunk) " stage the current hunk
-nn <leader>gu <Plug>(GitGutterUndoHunk)  " undo the last staged hunk
-nn <leader>] :GitGutterNextHunk<CR>      " jump to the next git hunk
-nn <leader>[ :GitGutterPrevHunk<CR>      " jump to the previous git hunk
+nn <leader>gi :Git<CR>
+nn <leader>gs :GFiles?<CR>
+nn <leader>gc :Git commit<CR>
+nn <leader>ge :Gedit<CR>
+nn <leader>gr :Gread<CR>
+nn <leader>gw :Gwrite<CR>
+nn <leader>gd :Gvdiffsplit<CR>
+nn <leader>gl :0Gclog<CR>
+nn <leader>go :Git browse<CR>
+nn <leader>gp :Git push<CR>
+nn <leader>ga <Plug>(GitGutterStageHunk)
+nn <leader>gu <Plug>(GitGutterUndoHunk)
+nn <leader>] :GitGutterNextHunk<CR>
+nn <leader>[ :GitGutterPrevHunk<CR>
