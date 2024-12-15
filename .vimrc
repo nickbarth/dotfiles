@@ -51,6 +51,8 @@ set t_Co=256                   " iterm2 terminal colors
 set t_BE=                      " vim-multiple-cursor
 set tags=tags                  " look for ctags in source directory
 set scrolloff=0                " no view scroll offset
+set hidden                     " do not save buffers
+set noconfirm                  " no confirmations
 
 set nocompatible
 filetype plugin indent on
